@@ -1,0 +1,4 @@
+// RegisterDog BREED PRICE FOODTYPE SEX furType trainable 
+// RegisterCat BREED PRICE FOODTYPE SEX furType social
+// RegisterParrot species price foodType  sex canTalk sing
+// RegisterSnake 
