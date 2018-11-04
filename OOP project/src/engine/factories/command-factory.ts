@@ -22,7 +22,7 @@ export class CommandFactory implements ICommandFactory {
         return allCommands;
       },
         new Map()
-    );
+      );
   }
 
   public getCommand(commandName: string): ICommand {
