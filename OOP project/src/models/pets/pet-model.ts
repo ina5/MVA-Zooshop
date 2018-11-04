@@ -1,33 +1,40 @@
 import { Sex } from '..';
 import { IPet } from '../../contratcs/pets-contracts';
+import { FoodType } from '../enum/food-type';
 
 // tslint:disable-next-line:export-name
 export abstract class Animals implements IPet {
+    public static _LastId: number = 0;
+    private _id: number;
     private readonly _price: number;
-    private readonly _foodType: string;
+    private readonly _foodType: FoodType;
     private readonly _sex: Sex;
     private readonly _breed: string;
 
-    constructor(breed: string, price: number, foodType: string, sex: Sex) {
+    constructor(breed: string, price: number, foodType: FoodType, sex: Sex) {
         if (breed.length < 1) {
             throw new Error(`Breed length cannot be less than 1 symbol.`);
         }
         if (price < 1 || price > 10000) {
             throw new Error(`Price cannot be less than 1лв and over 10 000лв.`);
         }
-        if (foodType.length < 1) {
-            throw new Error(`Food type cannot be less than 1 symbols.`);
-        }
+        Animals._LastId += 1;
+        this._id = Animals._LastId;
         this._breed = breed;
-        this._foodType = foodType;
         this._price = price;
+        this._foodType = foodType;
         this._sex = sex;
+
+    }
+
+    public get id(): number {
+        return this._id;
     }
 
     public get price(): number {
         return this._price;
     }
-    public get foodType(): string {
+    public get foodType(): FoodType {
         return this._foodType;
     }
     public get sex(): Sex {

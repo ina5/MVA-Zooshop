@@ -1,13 +1,14 @@
 import { Animals } from '.';
 import { DifficultyDegree, FurType, Sex } from '..';
 import { IMammal } from '../../contratcs/pets-contracts';
+import { FoodType } from '../enum/food-type';
 
 export class Dog extends Animals implements IMammal {
     private readonly _social: boolean;
     private readonly _trainable: DifficultyDegree;
     private readonly _furType: FurType;
 
-    constructor(breed: string, price: number, foodType: string, sex: Sex, furType: FurType, trainable: DifficultyDegree, social: boolean) {
+    constructor(breed: string, price: number, foodType: FoodType, sex: Sex, furType: FurType, trainable: DifficultyDegree, social: boolean) {
         super(breed, price, foodType, sex);
         this._furType = furType;
         this._trainable = trainable;
