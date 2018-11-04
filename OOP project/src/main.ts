@@ -1,8 +1,11 @@
-import { Cat } from './animals/cat';
-import { FurType } from './common/fur';
-import { Sex } from './common/sex';
-import { Printer } from './method/printer';
+// tslint:disable-next-line
+import 'reflect-metadata';
+import { IEngine } from './contratcs/engine-contracts';
+import { Engine } from './engine';
 
-const machka: Cat = new Cat('persiiska', 250, 'granuli', Sex.Female, FurType.Long, true);
-const printer: Printer = new Printer();
-printer.print(machka);
+const runInLocalEnvironment: () => void = (): void => {
+    const engine: IEngine = new Engine();
+    engine.start();
+};
+
+runInLocalEnvironment();

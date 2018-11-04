@@ -1,9 +1,7 @@
-import { WaterType } from '../common/water';
+import { WaterType } from '../../../models';
 import { IPet } from './pet';
 
 export interface IFish extends IPet {
-    species: string;
     waterType: WaterType;
     color: string;
-    size: string;
 }
