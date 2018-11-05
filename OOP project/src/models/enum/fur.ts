@@ -1,4 +1,4 @@
 export enum FurType {
-    Long,
-    Short
+    long,
+    short
 }

@@ -1,4 +1,4 @@
 export enum WaterType {
-    Fresh,
-    Salt
+    fresh,
+    salt
 }
