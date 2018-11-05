@@ -1,6 +1,6 @@
 import { Sex } from '../../../models';
-import { IPrinter } from './print';
 import { FoodType } from '../../../models/enum/food-type';
+import { IPrinter } from './print';
 
 export interface IPet extends IPrinter {
     id: number;

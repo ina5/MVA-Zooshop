@@ -1,4 +1,5 @@
 import { inject } from 'inversify';
+import * as commands from '../../commands';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { ICommandFactory, IPetsFactory } from '../../contratcs/engine-contracts';

@@ -1,9 +1,11 @@
+import { IType } from './type-interface';
 // tslint:disable-next-line:no-any
-export const TYPES: any = {
+export const TYPES: IType = {
     reader: Symbol.for('reader'),
     writer: Symbol.for('writer'),
     commandFactory: Symbol.for('commandFactory'),
     zooShopFactory: Symbol.for('zooShopFactory'),
-    petsFaqctory: Symbol.for('petsFactory'),
+    zooShopDatabase: Symbol.for('zooShopDatabase'),
+    petsFactory: Symbol.for('petsFactory'),
     dataFormatter: Symbol.for('dataFormatter')
 };
