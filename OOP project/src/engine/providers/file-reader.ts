@@ -1,8 +1,9 @@
 import { readFile } from 'fs';
-import { inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 import { join } from 'path';
 import { IDataFormatter, IReader } from '../../contratcs/engine-contracts';
 import { TYPES } from './../../common/TYPES';
+@injectable()
 
 export class FileReader implements IReader {
   private readonly _dataFormatter: IDataFormatter;
