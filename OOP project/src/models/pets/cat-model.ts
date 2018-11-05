@@ -8,7 +8,8 @@ export class Cat extends Animals implements IMammal {
     private readonly _social: boolean;
     private readonly _furType: FurType;
 
-    constructor(breed: string, price: number, foodType: FoodType, sex: Sex, furType: FurType, trainable: DifficultyDegree, social: boolean) {
+    constructor(breed: string, price: number, foodType: FoodType, sex: Sex,
+                furType: FurType, trainable: DifficultyDegree, social: boolean) {
         super(breed, price, foodType, sex);
         this._furType = furType;
         this._trainable = trainable;

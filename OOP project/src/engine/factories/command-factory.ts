@@ -1,16 +1,16 @@
+import { ZooShopDatabase } from './../../contratcs/zooShop-database';
 import { PetsFactory } from '.';
 import { ICommand } from '../../contratcs/commands/command';
-import { IPetsDatabase } from '../../contratcs/data-contract/shop-database';
 import { ICommandFactory, IPetsFactory } from '../../contratcs/engine-contracts';
-import { PetsDatabase } from '../../data/shop-database';
+import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 
 export class CommandFactory implements ICommandFactory {
-  private readonly _data: IPetsDatabase;
+  private readonly _data: IZooShopDatabase;
   private readonly _petsFactory: IPetsFactory;
-  private readonly _commands: Map<string, new (data: IPetsDatabase, factory: IPetsFactory) => ICommand>;
+  private readonly _commands: Map<string, new (data: IZooShopDatabase, factory: IPetsFactory) => ICommand>;
 
   public constructor() {
-    this._data = PetsDatabase.INSTANCE;
+    this._data = ZooShopDatabase.INSTANCE;
     this._petsFactory = new PetsFactory();
 
     this._commands = Object
@@ -28,7 +28,7 @@ export class CommandFactory implements ICommandFactory {
   public getCommand(commandName: string): ICommand {
     const lowerCaseCommandName: string = commandName.toLowerCase();
 
-    const command: new (data: IPetsDatabase, factory: IPetsFactory) => ICommand = this._commands.get(lowerCaseCommandName);
+    const command: new (data: IZooShopDatabase, factory: IPetsFactory) => ICommand = this._commands.get(lowerCaseCommandName);
     if (!command) {
       throw new Error(Constants.getInvalidCommandErrorMessage(commandName));
     }

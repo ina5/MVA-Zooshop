@@ -12,14 +12,14 @@ export class FileReader implements IReader {
 
   public async read(): Promise<string[]> {
     return new Promise((resolve: (res: string[]) => void, reject: (res: Error) => void): void => {
-        readFile(join(__dirname, '../../commands.txt'), 'utf-8', (err: Error, data: string): void => {
-            if (err) {
-              reject(err);
-            }
-            resolve(this._dataFormatter.formatData(data));
-          }
-        );
+      readFile(join(__dirname, '../../commands.txt'), 'utf-8', (err: Error, data: string): void => {
+        if (err) {
+          reject(err);
+        }
+        resolve(this._dataFormatter.formatData(data));
       }
+      );
+    }
     );
   }
 }

@@ -1,6 +1,6 @@
 import { DifficultyDegree, FurType, Sex, WaterType } from '../../../models';
-import { IBird, IFish, IMammal, IReptile } from '../../pets-contracts';
 import { FoodType } from '../../../models/enum/food-type';
+import { IBird, IFish, IMammal, IReptile } from '../../pets-contracts';
 
 // tslint:disable all -next-line:max-line-length
 export interface IPetsFactory {
