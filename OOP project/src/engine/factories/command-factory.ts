@@ -25,7 +25,7 @@ export class CommandFactory implements ICommandFactory {
 
         return allCommands;
       },
-        new Map()
+              new Map()
       );
   }
 

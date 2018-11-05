@@ -1,5 +1,5 @@
 import { ICommandProcessor } from './providers/command-processor';
 
-export interface IEngine extends ICommandProcessor {
+export interface IEngine {
   start(): Promise<void>;
 }

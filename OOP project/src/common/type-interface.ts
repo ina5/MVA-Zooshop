@@ -4,7 +4,8 @@ export interface IType {
     writer: any;
     commandFactory: any;
     zooShopFactory: any;
-    zooShopDatabase:any;
+    zooShopDatabase: any;
     petsFactory: any;
     dataFormatter: any;
+    commandProcessor: any;
 }
