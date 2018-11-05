@@ -1,5 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
+import { Constants } from '../../common/constants';
 import { ICommand, IPet, IPetsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { DifficultyDegree, FurType, Sex } from '../../models';
@@ -35,6 +36,6 @@ class ReceiveDog implements ICommand {
 
         this._zooShopDatabase.pets.push(dog);
 
-        return `Dog with ID ${this._zooShopDatabase.pets.length - 1} was created.`;
+        return Constants.getDogReceivedSuccessMessage(breed);
     }
 }

@@ -1,5 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
+import { Constants } from '../../common/constants';
 import { ICommand, IPet, IPetsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { Sex } from '../../models';
@@ -13,8 +14,8 @@ class ReceiveDog implements ICommand {
     constructor(
         @inject(TYPES.petsFactory) factory: IPetsFactory,
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
-    this._factory = factory;
-    this._zooShopDatabase = data;
+        this._factory = factory;
+        this._zooShopDatabase = data;
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, canTalk, sing] = parameters;
@@ -32,6 +33,6 @@ class ReceiveDog implements ICommand {
 
         this._zooShopDatabase.pets.push(parrot);
 
-        return `Parrot with ID ${this._zooShopDatabase.pets.length - 1} was created.`;
+        return Constants.getParrotReceivedSuccessMessage(breed);
     }
 }
