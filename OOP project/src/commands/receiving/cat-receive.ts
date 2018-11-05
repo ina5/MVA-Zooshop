@@ -1,14 +1,20 @@
-import { injectable } from 'inversify';
-import { ICommand, IPetsFactory, IPet } from "../../../contratcs";
+import { inject, injectable } from 'inversify';
+import { ICommand, IPet, IPetsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
+import { DifficultyDegree, FurType, Sex } from '../../models';
+import { FoodType } from '../../models/enum/food-type';
+import { TYPES } from './../../common/TYPES';
 
 @injectable()
 class ReceiveCat implements ICommand {
     private _factory: IPetsFactory;
-    private _zooShopDatabase: IZooShopDatabase = ;
+    private _zooShopDatabase: IZooShopDatabase;
 
-    // WHEN CONTAINER IS DONE
-    constructor() {
+    constructor(
+        @inject(TYPES.petsFactory) factory: IPetsFactory,
+        @inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
+    this._factory = factory;
+    this._zooShopDatabase = data;
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, furType, trainable, social] = parameters;
@@ -16,8 +22,17 @@ class ReceiveCat implements ICommand {
         if (isNaN(+price) || (social !== 'true' && social !== 'false')) {
             throw new Error('Failed to parse ReceiveCat command parameters.');
         }
+        const foodTypeKey: keyof typeof FoodType = <keyof typeof FoodType>foodType;
+        const food: FoodType = <FoodType>(FoodType[foodTypeKey]);
 
-        const cat: IPet = this._factory.receiveCat(breed, +price, foodType, sex, furType, trainable, social);
+        const sexTypeKey: keyof typeof Sex = <keyof typeof Sex>sex;
+        const gender: Sex = <Sex>(Sex[sexTypeKey]);
+        const furTypeKey: keyof typeof FurType = <keyof typeof FurType>furType;
+        const fur: FurType = <FurType>(FurType[furTypeKey]);
+        const difficultyDegreeKey: keyof typeof DifficultyDegree = <keyof typeof DifficultyDegree>trainable;
+        const degree: DifficultyDegree = <DifficultyDegree>(DifficultyDegree[difficultyDegreeKey]);
+        const isSocial: boolean = Boolean(social);
+        const cat: IPet = this._factory.receiveCat(breed, +price, food, gender, fur, degree, isSocial);
 
         this._zooShopDatabase.pets.push(cat);
 

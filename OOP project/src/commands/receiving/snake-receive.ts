@@ -1,25 +1,32 @@
-import { FoodType } from './../../../models/enum/food-type';
 import { inject, injectable } from 'inversify';
-import { IPet } from './../../../contratcs/pets-contracts/pets/pet';
-import { IPetsFactory } from './../../../contratcs/engine-contracts/factories/pets-factory';
-import { ICommand } from './../../../contratcs/commands/command';
-import { IZooShopDatabase } from '../../../contratcs/data-contract/zooShop-database';
-import { FoodType } from '../../../models/enum/food-type';
+import { TYPES } from '../../common';
+import { ICommand, IPet, IPetsFactory } from '../../contratcs';
+import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
+import { Sex } from '../../models';
+import { FoodType } from '../../models/enum/food-type';
+
 @injectable()
 class ReceiveSnake implements ICommand {
     private _factory: IPetsFactory;
     private _zooShopDatabase: IZooShopDatabase;
 
-    // WHEN CONTAINER IS DONE
-    constructor() {
+    constructor(
+        @inject(TYPES.petsFactory) factory: IPetsFactory,
+        @inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
+    this._factory = factory;
+    this._zooShopDatabase = data;
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, skinColor, isVenomous] = parameters;
         if (isNaN(+price) || (isVenomous !== 'true' && isVenomous !== 'false')) {
             throw new Error('Failed to parse ReceiveSnake command parameters.');
         }
+        const foodTypeKey: keyof typeof FoodType = <keyof typeof FoodType>foodType;
+        const food: FoodType = <FoodType>(FoodType[foodTypeKey]);
 
-        const snake: IPet = this._factory.receiveSnake(breed, +price, foodType, sex, skinColor, Boolean(isVenomous));
+        const sexTypeKey: keyof typeof Sex = <keyof typeof Sex>sex;
+        const gender: Sex = <Sex>(Sex[sexTypeKey]);
+        const snake: IPet = this._factory.receiveSnake(breed, +price, food, gender, skinColor, Boolean(isVenomous));
 
         this._zooShopDatabase.pets.push(snake);
 
