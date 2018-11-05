@@ -1,13 +1,16 @@
 import { readFile } from 'fs';
+import { inject } from 'inversify';
 import { join } from 'path';
 import { IDataFormatter, IReader } from '../../contratcs/engine-contracts';
-import { DataFormatter } from './data-formatter';
+import { TYPES } from './../../common/TYPES';
 
 export class FileReader implements IReader {
   private readonly _dataFormatter: IDataFormatter;
 
-  public constructor() {
-    this._dataFormatter = new DataFormatter();
+  public constructor(
+    @inject(TYPES.dataFormatter) dataFormatter: IDataFormatter
+  ) {
+    this._dataFormatter = dataFormatter;
   }
 
   public async read(): Promise<string[]> {

@@ -1,17 +1,22 @@
+import { inject, injectable } from 'inversify';
+import { TYPES } from '../common';
 import { ICommand } from '../contratcs/commands/command';
 import { ICommandFactory, IEngine, IReader, IWriter } from '../contratcs/engine-contracts';
-import { CommandFactory } from './factories';
-import { ConsoleWriter, FileReader } from './providers';
 
+@injectable()
 export class Engine implements IEngine {
   private readonly _reader: IReader;
   private readonly _writer: IWriter;
   private readonly _commandFactory: ICommandFactory;
 
-  public constructor() {
-    this._reader = new FileReader();
-    this._writer = new ConsoleWriter();
-    this._commandFactory = new CommandFactory();
+  public constructor(
+    @inject(TYPES.reader) _reader: IReader,
+    @inject(TYPES.writer) _writer: IWriter,
+    @inject(TYPES.commandFactory) _commandFactory: ICommandFactory
+  ) {
+    this._reader = _reader;
+    this._writer = _writer;
+    this._commandFactory = _commandFactory;
   }
 
   public async start(): Promise<void> {

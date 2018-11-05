@@ -1,17 +1,20 @@
-import { ZooShopDatabase } from './../../contratcs/zooShop-database';
-import { PetsFactory } from '.';
+import { inject } from 'inversify';
 import { ICommand } from '../../contratcs/commands/command';
-import { ICommandFactory, IPetsFactory } from '../../contratcs/engine-contracts';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
+import { ICommandFactory, IPetsFactory } from '../../contratcs/engine-contracts';
+import { TYPES } from './../../common/TYPES';
 
 export class CommandFactory implements ICommandFactory {
   private readonly _data: IZooShopDatabase;
   private readonly _petsFactory: IPetsFactory;
   private readonly _commands: Map<string, new (data: IZooShopDatabase, factory: IPetsFactory) => ICommand>;
 
-  public constructor() {
-    this._data = ZooShopDatabase.INSTANCE;
-    this._petsFactory = new PetsFactory();
+  public constructor(
+    @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
+    @inject(TYPES.petsFactory) petsFactory: IPetsFactory
+  ) {
+    this._data = data;
+    this._petsFactory = petsFactory;
 
     this._commands = Object
       .keys(commands)

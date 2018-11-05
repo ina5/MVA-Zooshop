@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Minimalistic TypeScript starter project for the course in Telerik Academy Alpha",
   "main": "main.js",
-  "dependencies": {},
+  "dependencies": {
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.12"
+  },
   "devDependencies": {
     "@types/node": "^10.11.7",
     "rimraf": "^2.6.2",
