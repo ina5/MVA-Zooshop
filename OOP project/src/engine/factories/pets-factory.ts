@@ -1,7 +1,7 @@
 import { IPetsFactory } from '../../contratcs/engine-contracts';
 import { Cat, ClownFish, DifficultyDegree, Dog, FurType, Parrot, Sex, Snake, WaterType } from '../../models';
-import { IBird, IFish, IMammal, IReptile } from './../../contratcs/pets-contracts/pets/index';
 import { FoodType } from '../../models/enum/food-type';
+import { IBird, IFish, IMammal, IReptile } from './../../contratcs/pets-contracts/pets/index';
 
 // tslint:disable all -next-line:max-line-length
 export class PetsFactory implements IPetsFactory {

@@ -1,7 +1,7 @@
 import { injectable } from 'inversify';
-import { IProduct } from './products-contract/products';
-import { IZooShopDatabase } from "./data-contract/zooShop-database";
-import { IPet } from './pets-contracts';
+import { IZooShopDatabase } from '../contratcs/data-contract/zooShop-database';
+import { IPet } from '../contratcs/pets-contracts';
+import { IProduct } from '../contratcs/products-contract/products';
 
 @injectable()
 export class ZooShopDatabase implements IZooShopDatabase {

@@ -4,6 +4,8 @@
   "description": "Minimalistic TypeScript starter project for the course in Telerik Academy Alpha",
   "main": "main.js",
   "dependencies": {
+    "@types/inversify": "^2.0.33",
+    "@types/reflect-metadata": "^0.1.0",
     "inversify": "^5.0.1",
     "reflect-metadata": "^0.1.12"
   },

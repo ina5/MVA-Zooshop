@@ -1,11 +1,11 @@
 import { injectable } from 'inversify';
 import { ICommand, IPetsFactory, IPet } from "../../../contratcs";
-import { IZooShopDatabase } from '../../../contratcs/data-contract/zooShop-database';
+import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 
 @injectable()
 class ReceiveCat implements ICommand {
-    private _factory: IPetsFactory
-    private _zooShopDatabase: IZooShopDatabase;
+    private _factory: IPetsFactory;
+    private _zooShopDatabase: IZooShopDatabase = ;
 
     // WHEN CONTAINER IS DONE
     constructor() {
