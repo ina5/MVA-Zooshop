@@ -13,8 +13,8 @@ export class ReceiveParrot implements ICommand {
     private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
-        @inject(TYPES.petsFactory) factory: IPetsFactory,
-        @inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
+        @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
+        @inject(TYPES.petsFactory) factory: IPetsFactory) {
         this._zooShopDatabase = data;
         this._factory = factory;
     }
