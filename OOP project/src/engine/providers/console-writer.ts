@@ -1,6 +1,7 @@
 import { injectable } from 'inversify';
-import { IWriter } from './../../contracts/';
+import { IWriter } from '../../contratcs/engine-contracts';
 @injectable()
+
 export class ConsoleWriter implements IWriter {
   public write(output: string): void {
     console.log(output);
