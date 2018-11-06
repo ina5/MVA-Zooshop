@@ -5,17 +5,19 @@ import { ICommand, IPet, IPetsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { DifficultyDegree, FurType, Sex } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
+import { IMammal } from './../../contratcs/pets-contracts/pets/mammal';
 
 @injectable()
-class ReceiveCat implements ICommand {
+export class ReceiveCat implements ICommand {
     private _factory: IPetsFactory;
     private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
         @inject(TYPES.petsFactory) factory: IPetsFactory,
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
-        this._factory = factory;
         this._zooShopDatabase = data;
+        this._factory = factory;
+
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, furType, trainable, social] = parameters;
@@ -33,8 +35,8 @@ class ReceiveCat implements ICommand {
         const difficultyDegreeKey: keyof typeof DifficultyDegree = <keyof typeof DifficultyDegree>trainable;
         const degree: DifficultyDegree = <DifficultyDegree>(DifficultyDegree[difficultyDegreeKey]);
         const isSocial: boolean = Boolean(social);
-        const cat: IPet = this._factory.receiveCat(breed, +price, food, gender, fur, degree, isSocial);
 
+        const cat: IMammal = this._factory.receiveCat(breed, +price, food, gender, fur, degree, isSocial);
         this._zooShopDatabase.pets.push(cat);
 
         return Constants.getCatReceivedSuccessMessage(breed);

@@ -1,10 +1,12 @@
 import { inject, injectable } from 'inversify';
 import * as commands from '../../commands';
 import { Constants } from '../../common/constants';
+import { TYPES } from '../../common/TYPES';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
-import { ICommandFactory, IPetsFactory } from '../../contratcs/engine-contracts';
-import { TYPES } from './../../common/TYPES';
+import { ICommandFactory } from '../../contratcs/engine-contracts/factories/command-factory';
+import { IPetsFactory } from '../../contratcs/engine-contracts/factories/pets-factory';
+
 @injectable()
 export class CommandFactory implements ICommandFactory {
   private readonly _data: IZooShopDatabase;

@@ -1,20 +1,19 @@
-CreateShop Zooshop
 ReceiveDog Rottweiler 600 granules Male Short Challenging true
 ReceiveCat Persian 400 paste Female Long Hard false
 ReceiveDog Begle 600 granules Male Short Easy false
 ReceiveParrot Coral 40 seeds Female false true
-ShowCategory Parrots
-CreateProduct SundayFood Whiskas 20.99 2
-Buy Dog 2
+//ShowCategory Parrots
+//CreateProduct SundayFood Whiskas 20.99 2
+//Buy Dog 2
 ReceiveDog Chihuahua 1000 granules Female Small Normal true
 ReceiveSnake Viper 800 rodents female brown true
-ShowCategory Dogs
+//ShowCategory Dogs
 ReceiveSnake Smok 600 rodents male grey false
-ShowCategory Cats
+//ShowCategory Cats
 ReceiveParrot Wooly 50 seeds Male false false
-Buy Dog 1
-ShowCategory Fish // EXEPTION ('Category ${} does not exist!')
+//Buy Dog 1
+//ShowCategory Fish // EXEPTION ('Category ${} does not exist!')
 ReceiveCat British 800 paste Female Long Normal true
 ReceiveFish Tetra 50 granules Female purple Fresh
 ReceiveCat Siamese 250 paste Male Short Normal true
-CreateProduct FundayFood Pedigree 50.99 3
+//CreateProduct FundayFood Pedigree 50.99 3

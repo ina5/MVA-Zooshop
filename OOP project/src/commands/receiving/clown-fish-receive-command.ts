@@ -5,16 +5,17 @@ import { ICommand, IPet, IPetsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { Sex, WaterType } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
+import { IFish } from './../../contratcs/pets-contracts/pets/fish';
 @injectable()
-class ReceiveFish implements ICommand {
+export class ReceiveFish implements ICommand {
     private _factory: IPetsFactory;
     private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
         @inject(TYPES.petsFactory) factory: IPetsFactory,
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
-        this._factory = factory;
         this._zooShopDatabase = data;
+        this._factory = factory;
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, color, waterType] = parameters;
@@ -31,7 +32,7 @@ class ReceiveFish implements ICommand {
         const waterTypeKey: keyof typeof WaterType = <keyof typeof WaterType>waterType;
         const water: WaterType = <WaterType>(WaterType[waterTypeKey]);
 
-        const fish: IPet = this._factory.receiveFish(breed, +price, food, gender, color, water);
+        const fish: IFish = this._factory.receiveFish(breed, +price, food, gender, color, water);
 
         this._zooShopDatabase.pets.push(fish);
 
