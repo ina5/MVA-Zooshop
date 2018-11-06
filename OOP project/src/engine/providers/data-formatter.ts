@@ -1,7 +1,6 @@
 import { injectable } from 'inversify';
-import { IDataFormatter } from '../../contratcs/engine-contracts';
+import { IDataFormatter } from './../../contracts';
 @injectable()
-
 export class DataFormatter implements IDataFormatter {
   public formatData(data: string): string[] {
     return data

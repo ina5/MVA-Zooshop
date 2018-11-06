@@ -1,1 +1,2 @@
-export * from './receiving';
+export * from './create-chair';
+export * from './create-table';

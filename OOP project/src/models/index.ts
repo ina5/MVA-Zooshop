@@ -1,2 +1,2 @@
-export * from './enum';
-export * from './pets';
+export * from './furnitures';
+export * from './common/material-type';

@@ -1,22 +1,21 @@
-import { inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 import * as commands from '../../commands';
-import { Constants } from '../../common/constants';
-import { ICommand } from '../../contratcs/commands/command';
-import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
-import { ICommandFactory, IPetsFactory } from '../../contratcs/engine-contracts';
-import { TYPES } from './../../common/TYPES';
-
+import { TYPES } from '../../common/types';
+import {
+  ICommand,
+  ICommandFactory,
+  IFuritureDatabase,
+  IModelsFactory
+} from '../../contracts';
+@injectable()
 export class CommandFactory implements ICommandFactory {
-  private readonly _data: IZooShopDatabase;
-  private readonly _petsFactory: IPetsFactory;
-  private readonly _commands: Map<string, new (data: IZooShopDatabase, factory: IPetsFactory) => ICommand>;
+  private readonly _commands: Map<string, new (data: IFuritureDatabase, factory: IModelsFactory) => ICommand>;
 
   public constructor(
-    @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
-    @inject(TYPES.petsFactory) petsFactory: IPetsFactory
-  ) {
-    this._data = data;
-    this._petsFactory = petsFactory;
+    @inject(TYPES.furnituredatabase) private readonly _data: IFuritureDatabase,
+    @inject(TYPES.modelsfactory) private readonly _modelsFactory: IModelsFactory) {
+    this._data = _data;
+    this._modelsFactory = _modelsFactory;
 
     this._commands = Object
       .keys(commands)
@@ -26,18 +25,18 @@ export class CommandFactory implements ICommandFactory {
 
         return allCommands;
       },
-              new Map()
+        new Map()
       );
   }
 
   public getCommand(commandName: string): ICommand {
     const lowerCaseCommandName: string = commandName.toLowerCase();
 
-    const command: new (data: IZooShopDatabase, factory: IPetsFactory) => ICommand = this._commands.get(lowerCaseCommandName);
+    const command: new(data: IFuritureDatabase, factory: IModelsFactory) => ICommand = this._commands.get(lowerCaseCommandName);
     if (!command) {
-      throw new Error(Constants.getInvalidCommandErrorMessage(commandName));
+      throw new Error('peeeras');
     }
 
-    return new command(this._data, this._petsFactory);
+    return new command(this._data, this._modelsFactory);
   }
 }
