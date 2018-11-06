@@ -26,8 +26,6 @@ export class Dog extends Animals implements IMammal {
     }
 
     protected additionalInfo(): string {
-        return `Fur type: ${this.furType}
-        Trainable: ${this.trainable}
-        Is it social ${this.social}`;
+        return `Fur type: ${this.furType}\nTrainable: ${this.trainable}\nIs it social ${this.social}`;
     }
 }

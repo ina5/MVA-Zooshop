@@ -45,11 +45,8 @@ export abstract class Animals implements IPet, IPrinter {
         return this._breed;
     }
     public print(): string {
-        return `Breed: ${this.breed}
-        Price: ${this.price}
-        Food: ${this.foodType}
-        Gender: ${this.sex}
-        ${this.additionalInfo()}`;
+        // tslint:disable-next-line:max-line-length
+        return `ID: ${this.id}\nBreed: ${this.breed}\nPrice: ${this.price}\nFood: ${this.foodType}\nGender: ${this.sex}\n${this.additionalInfo()}`;
     }
     protected abstract additionalInfo(): string;
 }

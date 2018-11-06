@@ -23,7 +23,6 @@ export class Snake extends Animals implements IReptile {
         return this._skinColor;
     }
     protected additionalInfo(): string {
-        return `Skin color: ${this.skinColor}
-        Venomous: ${this.isVenomous}`;
+        return `Skin color: ${this.skinColor}\nVenomous: ${this.isVenomous}`;
     }
 }

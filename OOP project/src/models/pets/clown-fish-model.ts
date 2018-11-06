@@ -23,7 +23,6 @@ export class ClownFish extends Animals implements IFish {
         return this._waterType;
     }
     protected additionalInfo(): string {
-        return `Skin color: ${this.color}
-        Aquatic environment: ${this.waterType}`;
+        return `Skin color: ${this.color}\nAquatic environment: ${this.waterType}`;
     }
 }

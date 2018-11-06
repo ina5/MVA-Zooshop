@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import * as commands from '../../commands/receiving';
+import * as commands from '../../commands';
 import { Constants } from '../../common/constants';
 import { TYPES } from '../../common/TYPES';
 import { ICommand } from '../../contratcs/commands/command';

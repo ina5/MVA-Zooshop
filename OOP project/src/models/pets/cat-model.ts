@@ -27,8 +27,6 @@ export class Cat extends Animals implements IMammal {
     protected additionalInfo(): string {
         const nature: string = this._social === true ? 'yes' : 'no';
 
-        return `Fur type: ${this.furType}
-        Trainable: ${this.trainable}
-        Is it social: ${nature}`;
+        return `Fur type: ${this.furType}\nTrainable: ${this.trainable}\nIs it social: ${nature}`;
     }
 }

@@ -19,7 +19,6 @@ export class Parrot extends Animals implements IBird {
         return this._sing;
     }
     protected additionalInfo(): string {
-        return `Can talk: ${this.canTalk}
-        Can sing: ${this.sing}`;
+        return `Can talk: ${this.canTalk}\nCan sing: ${this.sing}`;
     }
 }

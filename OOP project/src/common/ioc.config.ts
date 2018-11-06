@@ -18,12 +18,13 @@ import { TYPES } from './TYPES';
 const container: Container = new Container();
 
 container.bind<IZooShopDatabase>(TYPES.zooShopDatabase).to(ZooShopDatabase).inSingletonScope();
+container.bind<IPetsFactory>(TYPES.petsFactory).to(PetsFactory).inSingletonScope();
+container.bind<ICommandProcessor>(TYPES.commandProcessor).to(CommandProcessor).inTransientScope();
+
 container.bind<IReader>(TYPES.reader).to(FileReader);
 container.bind<IWriter>(TYPES.writer).to(ConsoleWriter);
 container.bind<IEngine>(Engine).to(Engine);
-container.bind<IPetsFactory>(TYPES.petsFactory).to(PetsFactory);
 container.bind<IDataFormatter>(TYPES.dataFormatter).to(DataFormatter);
-container.bind<ICommandProcessor>(TYPES.commandProcessor).to(CommandProcessor);
 container.bind<ICommandFactory>(TYPES.commandFactory).to(CommandFactory);
 
 export { container };
