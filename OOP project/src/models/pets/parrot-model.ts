@@ -19,6 +19,9 @@ export class Parrot extends Animals implements IBird {
         return this._sing;
     }
     protected additionalInfo(): string {
-        return `Can talk: ${this.canTalk}\nCan sing: ${this.sing}`;
+        const canTalkToString: string = this._canTalk === true ? 'yes' : 'no';
+        const canSingToString: string = this._sing === true ? 'yes' : 'no';
+
+        return `Can talk: ${canTalkToString}\nCan sing: ${canSingToString}`;
     }
 }

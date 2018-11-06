@@ -17,13 +17,13 @@ export class Constants {
         return `!!! Fish from breed ${petBreed} received`;
     }
     public static getAnimaRemovedSuccessMessage(id: number): string {
-        return `Animal with id: ${id} removed from ZooShop!`;
+        return `- Zooshop sell pet with id: ${id}`;
     }
     // error messages
     public static getInvalidCommandErrorMessage(commandName: string): string {
-        return `Invalid command name: ${commandName}`;
+        return `Х Invalid command name: ${commandName}`;
     }
     public static getAnimalNotFoundErrorMessage(id: number): string {
-        return `Animal with id: ${id} was already sold!`;
+        return `Х Pet with id: ${id} was already sold! :(`;
     }
 }
