@@ -16,8 +16,14 @@ export class Constants {
     public static getFishReceivedSuccessMessage(petBreed: string): string {
         return `!!! Fish from breed ${petBreed} received`;
     }
+    public static getAnimaRemovedSuccessMessage(id: number): string {
+        return `Animal with id: ${id} removed from ZooShop!`;
+    }
     // error messages
     public static getInvalidCommandErrorMessage(commandName: string): string {
         return `Invalid command name: ${commandName}`;
+    }
+    public static getAnimalNotFoundErrorMessage(id: number): string {
+        return `Animal with id: ${id} was already sold!`;
     }
 }
