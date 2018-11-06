@@ -1,8 +1,8 @@
 export enum FoodType {
-    canned,
-    granules,
-    paste,
-    rodents,
-    seeds,
-    insects
+    canned = 'canned',
+    granules = 'granules',
+    paste = 'paste',
+    rodents = 'rodents',
+    seeds = 'seeds',
+    insects = 'insects'
 }
