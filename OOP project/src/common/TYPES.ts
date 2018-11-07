@@ -9,6 +9,5 @@ export const TYPES: IType = {
     petsFactory: Symbol.for('petsFactory'),
     productFactory: Symbol.for('productFactory'),
     dataFormatter: Symbol.for('dataFormatter'),
-    commandProcessor: Symbol.for('commandProcessor'),
-    petOrProductFactory: Symbol.for('petOrProductFactory')
+    commandProcessor: Symbol.for('commandProcessor')
 };

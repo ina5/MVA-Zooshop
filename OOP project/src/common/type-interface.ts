@@ -9,5 +9,4 @@ export interface IType {
     productFactory: any;
     dataFormatter: any;
     commandProcessor: any;
-    petOrProductFactory: any;
 }
