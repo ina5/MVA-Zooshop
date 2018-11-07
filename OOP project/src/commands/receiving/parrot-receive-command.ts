@@ -32,7 +32,7 @@ export class ReceiveParrot implements ICommand {
 
         const parrot: IBird = this._factory.receiveParrot(breed, +price, food, gender, Boolean(canTalk), Boolean(sing));
 
-        this._zooShopDatabase.pets.push(parrot);
+        this._zooShopDatabase.addPet('parrot', parrot);
 
         return Constants.getParrotReceivedSuccessMessage(breed);
     }

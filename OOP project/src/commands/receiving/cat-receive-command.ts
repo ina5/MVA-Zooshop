@@ -36,9 +36,10 @@ export class ReceiveCat implements ICommand {
         const degree: DifficultyDegree = <DifficultyDegree>(DifficultyDegree[difficultyDegreeKey]);
         const isSocial: boolean = Boolean(social);
 
-        const cat: IMammal = this._factory.receiveCat(breed, +price, food, gender, fur, degree, isSocial);
-        this._zooShopDatabase.pets.push(cat);
+        const cat: IPet = this._factory.receiveCat(breed, +price, food, gender, fur, degree, isSocial);
+        this._zooShopDatabase.addPet('cat', cat);
 
         return Constants.getCatReceivedSuccessMessage(breed);
+
     }
 }

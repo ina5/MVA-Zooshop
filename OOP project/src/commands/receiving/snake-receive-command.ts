@@ -31,7 +31,7 @@ export class ReceiveSnake implements ICommand {
 
         const snake: IReptile = this._factory.receiveSnake(breed, +price, food, gender, skinColor, Boolean(isVenomous));
 
-        this._zooShopDatabase.pets.push(snake);
+        this._zooShopDatabase.addPet('snake', snake);
 
         return Constants.getSnakeReceivedSuccessMessage(breed);
     }

@@ -34,7 +34,7 @@ export class ReceiveFish implements ICommand {
 
         const fish: IFish = this._factory.receiveFish(breed, +price, food, gender, color, water);
 
-        this._zooShopDatabase.pets.push(fish);
+        this._zooShopDatabase.addPet('fish', fish);
 
         return Constants.getFishReceivedSuccessMessage(breed);
     }

@@ -37,7 +37,7 @@ export class ReceiveDog implements ICommand {
 
         const dog: IMammal = this._factory.receiveDog(breed, +price, food, gender, fur, degree, isSocial);
 
-        this._zooShopDatabase.pets.push(dog);
+        this._zooShopDatabase.addPet('dog', dog);
 
         return Constants.getDogReceivedSuccessMessage(breed);
     }
