@@ -1,12 +1,12 @@
 ReceiveDog Rottweiler 600 granules male short challenging true
 ReceiveCat Persian 400 paste female long hard false
-ReceiveDog Beagle 600 granules male short easy false
-ReceiveParrot Coral 40 seeds female false true
-ListPets 
-SellAnimalFromShop 2
-SellAnimalFromShop 3
-SellAnimalFromShop 4
-ListPets
+//ReceiveDog Beagle 600 granules male short easy false
+//ReceiveParrot Coral 40 seeds female false true
+//ListPets 
+//SellAnimalFromShop 2
+//SellAnimalFromShop 3
+//SellAnimalFromShop 4
+//ListPets
 //ShowCategory Parrots
 //CreateProduct SundayFood Whiskas 20.99 2
 //Buy Dog 2

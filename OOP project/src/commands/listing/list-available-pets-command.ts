@@ -3,7 +3,6 @@ import { TYPES } from '../../common';
 import { IPet } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { ICommand } from './../../contratcs/commands/command';
-import { IPetsFactory } from './../../contratcs/engine-contracts/factories/pets-factory';
 @injectable()
 export class ListPets implements ICommand {
     private readonly _zooshopDatabase: IZooShopDatabase;
