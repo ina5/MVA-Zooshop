@@ -11,7 +11,7 @@ export class ListProducts implements ICommand {
     }
     public execute(parameters: string[]): string {
         return `>> List available products.\n${this._zooshopDatabase.products.length === 0
-            ? 'There are no received pets at the moment...sorry.'
+            ? 'There are no available foods at the moment...sorry.'
             : this._zooshopDatabase.products.map((product: IProduct) => product.print()).join('\n#####################\n')
             }`;
     }

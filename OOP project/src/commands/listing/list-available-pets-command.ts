@@ -11,7 +11,7 @@ export class ListPets implements ICommand {
     }
     public execute(parameters: string[]): string {
         return `>> List available pets.\n${this._zooshopDatabase.pets.length === 0
-            ? 'There are no received pets at the moment...sorry.'
+            ? 'There are no available pets at the moment...sorry.'
             : this._zooshopDatabase.pets.map((pet: IPet) => pet.print()).join('\n#####################\n')
             }`;
     }

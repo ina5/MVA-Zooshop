@@ -12,11 +12,11 @@ export class PetFood implements IProduct {
             throw new Error('Name length cannot be less than 3 symbols');
         }
         if (brand.length < 3) {
-            throw new Error('Name length cannot be less than 3 symbols');
+            throw new Error('Brand length cannot be less than 3 symbols');
         }
         // tslint:disable-next-line:number-literal-format
         if (price < 0.10) {
-            throw new Error('Price cannot be less than 0.10лв.');
+            throw new Error('Price cannot be less than 0.10lv.');
         }
         if (quantity < 1) {
             throw new Error('Required quantity is 1.');
@@ -40,6 +40,6 @@ export class PetFood implements IProduct {
     }
 
     public print(): string {
-        return `${this.name} ${this.brand}\nPrice: ${this.price}лв\nQuantity: ${this.quantity}`;
+        return `${this.name} ${this.brand}\nPrice: ${this.price}lv\nQuantity: ${this.quantity}`;
     }
 }
