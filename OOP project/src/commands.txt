@@ -1,7 +1,10 @@
 ReceiveDog Rottweiler 600 granules male short challenging true
 ReceiveDog Beagle 600 granules male short easy false
-ReceiveCat Persian 400 paste female long hard false
-ReceiveParrot Coral 40 seeds female false true
+ListPets
+//ReceiveCat Persian 400 paste female long hard false
+//ReceiveParrot Coral 40 seeds female false true
+SellPet dog 2
+ListPets
 //SellAnimalFromShop 2
 //SellAnimalFromShop 2
 //ReceiveFood K&P Purina 8 2

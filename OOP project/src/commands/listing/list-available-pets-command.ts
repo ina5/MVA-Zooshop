@@ -13,9 +13,4 @@ export class ListPets implements ICommand {
         return `List avaliable pets\n
         ${Object.values(this._zooshopDatabase.pets).map((pet: IPet) => `${pet.print()}\n#####################\n`)}`;
     }
-    // return `>> List available pets.\n${this._zooshopDatabase.pets.size === 0
-    //     ? 'There are no available pets at the moment...sorry.'
-    //     : this._zooshopDatabase.pets.map((pet: IPet) => pet.print()).join('\n#####################\n')
-    //     }`;
-
 }
