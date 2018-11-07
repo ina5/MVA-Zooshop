@@ -1,6 +1,6 @@
 import { Container } from 'inversify';
-import { IDataFormatter, IPetsFactory, IReader } from '../contratcs';
-import { PetsFactory } from '../engine/factories/models-factory';
+import { IDataFormatter, IModelsFactory, IReader } from '../contratcs';
+import { ModelsFactory } from '../engine/factories/models-factory';
 import { IZooShopDatabase } from './../contratcs/data-contract/zooShop-database';
 import { IEngine } from './../contratcs/engine-contracts/engine';
 import { ICommandFactory } from './../contratcs/engine-contracts/factories/command-factory';
@@ -18,7 +18,7 @@ import { TYPES } from './TYPES';
 const container: Container = new Container();
 
 container.bind<IZooShopDatabase>(TYPES.zooShopDatabase).to(ZooShopDatabase).inSingletonScope();
-container.bind<IPetsFactory>(TYPES.petsFactory).to(PetsFactory).inSingletonScope();
+container.bind<IModelsFactory>(TYPES.modelsFactory).to(ModelsFactory).inSingletonScope();
 container.bind<ICommandProcessor>(TYPES.commandProcessor).to(CommandProcessor).inTransientScope();
 
 container.bind<IReader>(TYPES.reader).to(FileReader);

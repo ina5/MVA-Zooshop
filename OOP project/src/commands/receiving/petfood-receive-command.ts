@@ -1,17 +1,17 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
 import { Constants } from '../../common/constants';
-import { ICommand, IProduct, IProductFactory } from '../../contratcs';
+import { ICommand, IModelsFactory, IProduct } from '../../contratcs';
 import { IZooShopDatabase } from './../../contratcs/data-contract/zooShop-database';
 
 @injectable()
 export class ReceiveFood implements ICommand {
-    private _factory: IProductFactory;
+    private _factory: IModelsFactory;
     private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
-        @inject(TYPES.productFactory) factory: IProductFactory) {
+        @inject(TYPES.productFactory) factory: IModelsFactory) {
         this._zooShopDatabase = data;
         this._factory = factory;
 

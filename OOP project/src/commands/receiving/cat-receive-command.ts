@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import { Constants } from '../../common/constants';
 import { TYPES } from '../../common/TYPES';
-import { ICommand, IPet, IPetsFactory } from '../../contratcs';
+import { ICommand, IModelsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { DifficultyDegree, FurType, Sex } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
@@ -9,12 +9,12 @@ import { IMammal } from './../../contratcs/pets-contracts/pets/mammal';
 
 @injectable()
 export class ReceiveCat implements ICommand {
-    private _factory: IPetsFactory;
+    private _factory: IModelsFactory;
     private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
-        @inject(TYPES.petsFactory) factory: IPetsFactory) {
+        @inject(TYPES.modelsFactory) factory: IModelsFactory) {
         this._zooShopDatabase = data;
         this._factory = factory;
 

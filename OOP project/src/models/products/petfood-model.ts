@@ -21,6 +21,10 @@ export class PetFood implements IProduct {
         if (quantity < 1) {
             throw new Error('Required quantity is 1.');
         }
+        this._name = name;
+        this._brand = brand;
+        this._price = price;
+        this._quantity = quantity;
     }
     public get name(): string {
         return this._name;
@@ -36,6 +40,6 @@ export class PetFood implements IProduct {
     }
 
     public print(): string {
-        return `${this.name} ${this.brand}\n Price: ${this.price}лв\n Quantity: ${this.quantity}`;
+        return `${this.name} ${this.brand}\nPrice: ${this.price}лв\nQuantity: ${this.quantity}`;
     }
 }

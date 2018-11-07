@@ -1,4 +1,6 @@
 ReceiveFood HairballManagement Purina 8 2
+ReceiveFood HairballManagement Purina 8 2
+ListProducts
 ReceiveDog Rottweiler 600 granules male short challenging true
 ReceiveCat Persian 400 paste female long hard false
 ReceiveDog Beagle 600 granules male short easy false
