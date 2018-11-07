@@ -10,7 +10,14 @@ export class ListPets implements ICommand {
         this._zooshopDatabase = zooshopDatabase;
     }
     public execute(parameters: string[]): string {
-        return `List avaliable pets\n
-        ${Object.values(this._zooshopDatabase.pets).map((pet: IPet) => `${pet.print()}\n#####################\n`)}`;
+        const petMap: Map<string, IPet[]> = this._zooshopDatabase.pets;
+        if (petMap === undefined || petMap.size === 0) {
+            throw new Error('There is no pets to show!');
+        } else {
+            const str: string[] = [];
+            petMap.values().next().value.forEach((pet: IPet) => str.push(pet.print()));
+
+            return `>> List available pets\n${str.join('\n###################\n')}`;
+        }
     }
 }

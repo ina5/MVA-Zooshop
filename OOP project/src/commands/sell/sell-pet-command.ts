@@ -16,7 +16,7 @@ export class SellPet implements ICommand {
         const [animal, animalId] = parameters;
         const petArray: IPet[] | undefined = this._data.pets.get(animal);
         if (petArray === undefined) {
-            throw new Error('The key can not be undefined!');
+            throw new Error('There is no pets to sell.');
         } else {
             const indexInPetArr: number = petArray.findIndex((el: IPet) => el.id === +animalId);
             petArray.splice(indexInPetArr, 1);
