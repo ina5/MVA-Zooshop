@@ -6,7 +6,8 @@ export interface IType {
     commandFactory: any;
     zooShopFactory: any;
     zooShopDatabase: any;
-    petsFactory: any;
+    modelsFactory: any;
+    productFactory: any;
     dataFormatter: any;
     commandProcessor: any;
     commandParser: any;

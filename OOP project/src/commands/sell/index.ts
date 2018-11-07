@@ -1,1 +1,2 @@
-export * from './sell-animal-fromShop-command';
+export * from './sell-pet-command';
+export * from './sell-food-command';

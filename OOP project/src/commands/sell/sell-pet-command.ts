@@ -2,11 +2,11 @@ import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
 import { Constants } from '../../common/constants';
 import { ICommand } from '../../contratcs/commands/command';
+import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { IPet } from '../../contratcs/pets-contracts/pets/pet';
-import { IZooShopDatabase } from './../../contratcs/data-contract/zooShop-database';
 
 @injectable()
-export class SellAnimalFromShop implements ICommand {
+export class SellAnimal implements ICommand {
     private readonly _data: IZooShopDatabase;
 
     public constructor(@inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {

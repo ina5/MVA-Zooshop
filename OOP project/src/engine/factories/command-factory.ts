@@ -5,20 +5,20 @@ import { TYPES } from '../../common/TYPES';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { ICommandFactory } from '../../contratcs/engine-contracts/factories/command-factory';
-import { IPetsFactory } from '../../contratcs/engine-contracts/factories/pets-factory';
+import { IModelsFactory } from '../../contratcs/engine-contracts/factories/models-factory';
 
 @injectable()
 export class CommandFactory implements ICommandFactory {
   private readonly _data: IZooShopDatabase;
-  private readonly _petsFactory: IPetsFactory;
-  private readonly _commands: Map<string, new (data: IZooShopDatabase, factory: IPetsFactory) => ICommand>;
+  private readonly _modelsFactory: IModelsFactory;
+  private readonly _commands: Map<string, new (data: IZooShopDatabase, factory: IModelsFactory) => ICommand>;
 
   public constructor(
     @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
-    @inject(TYPES.petsFactory) petsFactory: IPetsFactory
+    @inject(TYPES.modelsFactory) modelsFactory: IModelsFactory
   ) {
     this._data = data;
-    this._petsFactory = petsFactory;
+    this._modelsFactory = modelsFactory;
 
     this._commands = Object
       .keys(commands)
@@ -35,11 +35,12 @@ export class CommandFactory implements ICommandFactory {
   public getCommand(commandName: string): ICommand {
     const lowerCaseCommandName: string = commandName.toLowerCase();
 
-    const command: (new (data: IZooShopDatabase, factory: IPetsFactory) => ICommand) | undefined = this._commands.get(lowerCaseCommandName);
+    const command: (new (data: IZooShopDatabase, factory: IModelsFactory)
+    => ICommand) | undefined = this._commands.get(lowerCaseCommandName);
     if (!command) {
       throw new Error(Constants.getInvalidCommandErrorMessage(commandName));
     }
 
-    return new command(this._data, this._petsFactory);
+    return new command(this._data, this._modelsFactory);
   }
 }

@@ -1,9 +1,8 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
-import { IPet } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { ICommand } from './../../contratcs/commands/command';
-import { IPetsFactory } from './../../contratcs/engine-contracts/factories/pets-factory';
+import { IPet } from './../../contratcs/pets-contracts/pets/pet';
 @injectable()
 export class ListPets implements ICommand {
     private readonly _zooshopDatabase: IZooShopDatabase;
@@ -11,9 +10,12 @@ export class ListPets implements ICommand {
         this._zooshopDatabase = zooshopDatabase;
     }
     public execute(parameters: string[]): string {
-        return `${this._zooshopDatabase.pets.length === 0
-            ? 'There are no received pets at the moment...sorry.'
-            : this._zooshopDatabase.pets.map((pet: IPet) => pet.print()).join('\n####################\n')
-            }`;
+        return `List avaliable pets\n
+        ${Object.values(this._zooshopDatabase.pets).map((pet: IPet) => `${pet.print()}\n#####################\n`)}`;
     }
+    // return `>> List available pets.\n${this._zooshopDatabase.pets.size === 0
+    //     ? 'There are no available pets at the moment...sorry.'
+    //     : this._zooshopDatabase.pets.map((pet: IPet) => pet.print()).join('\n#####################\n')
+    //     }`;
+
 }

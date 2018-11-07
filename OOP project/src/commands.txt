@@ -2,8 +2,27 @@ ReceiveDog Rottweiler 600 granules male short challenging true
 ReceiveDog Beagle 600 granules male short easy false
 ReceiveCat Persian 400 paste female long hard false
 ReceiveParrot Coral 40 seeds female false true
-SellAnimalFromShop 2
-SellAnimalFromShop 2
+//SellAnimalFromShop 2
+//SellAnimalFromShop 2
+//ReceiveFood K&P Purina 8 2
+//ReceiveFood Whiskas Pauch 8 1
+//ReceiveFood Kaufland SoftGranny 8 2
+//ListProducts
+//SellFood K&P
+//SellFood Whiskas
+//SellFood Kaufland
+//ListProducts
+//ReceiveFood HairballManagement Purina 8 2
+//ListProducts
+//ReceiveDog Rottweiler 600 granules male short challenging true
+//ReceiveCat Persian 400 paste female long hard false
+//ReceiveDog Beagle 600 granules male short easy false
+//ReceiveParrot Coral 40 seeds female false true
+//ListPets 
+//SellAnimal 2
+//SellAnimal 3
+//SellAnimal 4
+//ListPets
 //ShowCategory Parrots
 //CreateProduct SundayFood Whiskas 20.99 2
 //Buy Dog 2
@@ -19,5 +38,5 @@ SellAnimalFromShop 2
 //ReceiveFish Tetra 50 granules female purple fresh
 //ReceiveCat Siamese 250 paste male short normal true
 //CreateProduct FundayFood Pedigree 50.99 3
-//ReceiveKon Arabski 750 seno male short easy true
-//ListPets 
+//ListPets
+
