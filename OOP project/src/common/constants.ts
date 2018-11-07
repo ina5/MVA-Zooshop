@@ -19,6 +19,9 @@ export class Constants {
     public static getAnimaRemovedSuccessMessage(id: number): string {
         return `- Zooshop sell pet with id: ${id}`;
     }
+    public static getFoodReceivedSuccessMessage(foodBrand: string): string {
+        return `!!! Food from brand ${foodBrand} received`;
+    }
     // error messages
     public static getInvalidCommandErrorMessage(commandName: string): string {
         return `Х Invalid command name: ${commandName}`;

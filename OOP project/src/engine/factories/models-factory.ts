@@ -1,8 +1,10 @@
 import { injectable } from 'inversify';
+import { IProduct } from '../../contratcs';
 import { IPetsFactory } from '../../contratcs/engine-contracts';
+import { IBird, IFish, IMammal, IReptile } from '../../contratcs/pets-contracts/pets/index';
 import { Cat, ClownFish, DifficultyDegree, Dog, FurType, Parrot, Sex, Snake, WaterType } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
-import { IBird, IFish, IMammal, IReptile } from './../../contratcs/pets-contracts/pets/index';
+import { PetFood } from '../../models/products/petfood-model';
 @injectable()
 // tslint:disable all -next-line:max-line-length
 export class PetsFactory implements IPetsFactory {
@@ -21,5 +23,9 @@ export class PetsFactory implements IPetsFactory {
   }
   public receiveFish(breed: string, price: number, foodType: FoodType, sex: Sex, color: string, waterType: WaterType): IFish {
     return new ClownFish(breed, price, foodType, sex, color, waterType);
+  }
+  // Product factories
+  public receiveFood(name: string, brand: string, price: number, quantity: number): IProduct {
+    return new PetFood(name, brand, price, quantity);
   }
 }

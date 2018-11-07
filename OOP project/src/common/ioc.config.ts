@@ -1,5 +1,6 @@
 import { Container } from 'inversify';
 import { IDataFormatter, IPetsFactory, IReader } from '../contratcs';
+import { PetsFactory } from '../engine/factories/models-factory';
 import { IZooShopDatabase } from './../contratcs/data-contract/zooShop-database';
 import { IEngine } from './../contratcs/engine-contracts/engine';
 import { ICommandFactory } from './../contratcs/engine-contracts/factories/command-factory';
@@ -8,7 +9,6 @@ import { IWriter } from './../contratcs/engine-contracts/providers/writer';
 import { ZooShopDatabase } from './../data/zooShop-database';
 import { Engine } from './../engine/engine';
 import { CommandFactory } from './../engine/factories/command-factory';
-import { PetsFactory } from './../engine/factories/pets-factory';
 import { CommandProcessor } from './../engine/providers/command-processor';
 import { ConsoleWriter } from './../engine/providers/console-writer';
 import { DataFormatter } from './../engine/providers/data-formatter';

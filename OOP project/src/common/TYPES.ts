@@ -7,6 +7,8 @@ export const TYPES: IType = {
     zooShopFactory: Symbol.for('zooShopFactory'),
     zooShopDatabase: Symbol.for('zooShopDatabase'),
     petsFactory: Symbol.for('petsFactory'),
+    productFactory: Symbol.for('productFactory'),
     dataFormatter: Symbol.for('dataFormatter'),
-    commandProcessor: Symbol.for('commandProcessor')
+    commandProcessor: Symbol.for('commandProcessor'),
+    petOrProductFactory: Symbol.for('petOrProductFactory')
 };

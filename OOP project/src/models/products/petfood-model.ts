@@ -1,6 +1,6 @@
 import { IProduct } from '../../contratcs';
 
-export class Product implements IProduct {
+export class PetFood implements IProduct {
 
     private readonly _name: string;
     private readonly _brand: string;
