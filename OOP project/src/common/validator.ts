@@ -1,16 +1,16 @@
 // tslint:disable
 export class Validator {
     // success messages
-    public static getReceived(className: string, petBreed: string): string {
+    public static getReceivedMessage(className: string, petBreed: string): string {
         return `+ ${className} from breed ${petBreed} received`;
     }
-    public static getFoodReceived(foodBrand: string): string {
+    public static getFoodReceivedMessage(foodBrand: string): string {
         return `+ Food from brand ${foodBrand} received`;
     }
-    public static getAnimaRemoved(id: number): string {
+    public static getAnimaRemovedMessage(id: number): string {
         return `- Zooshop sell pet with id: ${id}`;
     }
-    public static getFoodRemoved(name: string): string {
+    public static getFoodRemovedMessage(name: string): string {
         return `- Zooshop sell food ${name}`;
     }
     // error messages
@@ -22,5 +22,8 @@ export class Validator {
     }
     public static getFoodNotFoundErrorMessage(name: string): string {
         return `Х Food ${name} was already sold! :(`;
+    }
+    public static getErrorMessage(message: string): string {
+        throw `X Opps ${message}`;
     }
 }

@@ -25,6 +25,6 @@ export class ReceiveFood implements ICommand {
         const food: IProduct = this._factory.receiveFood(name, brand, +price, +quantity);
         this._zooShopDatabase.products.push(food);
 
-        return Validator.getFoodReceived(brand);
+        return Validator.getFoodReceivedMessage(brand);
     }
 }

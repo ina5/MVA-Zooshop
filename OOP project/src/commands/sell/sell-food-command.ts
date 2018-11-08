@@ -21,7 +21,7 @@ export class SellFood implements ICommand {
         const foundProductIndex: number = this._data.products.findIndex((food: IProduct) => food.name === name);
         const quantityNumber: number = (Number(quantity));
         if (foundProductIndex === -1) {
-            throw new Error(Validator.getFoodNotFoundErrorMessage(name));
+            return Validator.getFoodNotFoundErrorMessage(name);
         }
         if (this._data.products[foundProductIndex].quantity - quantityNumber === 0) {
             this._data.products.splice(foundProductIndex, 1);
@@ -29,6 +29,6 @@ export class SellFood implements ICommand {
             this._data.products[foundProductIndex].quantity -= quantityNumber;
         }
 
-        return Validator.getFoodRemoved(name);
+        return Validator.getFoodRemovedMessage(name);
     }
 }

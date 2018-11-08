@@ -33,6 +33,6 @@ export class ReceiveSnake implements ICommand {
 
         this._zooShopDatabase.addPet('snake', snake);
 
-        return Validator.getReceived('Snake', breed);
+        return Validator.getReceivedMessage('Snake', breed);
     }
 }

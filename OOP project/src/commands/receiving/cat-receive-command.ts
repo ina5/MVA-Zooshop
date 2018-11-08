@@ -39,7 +39,7 @@ export class ReceiveCat implements ICommand {
         const cat: IPet = this._factory.receiveCat(breed, +price, food, gender, fur, degree, isSocial);
         this._zooShopDatabase.addPet('cat', cat);
 
-        return Validator.getReceived('Cat', breed);
+        return Validator.getReceivedMessage('Cat', breed);
 
     }
 }

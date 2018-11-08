@@ -22,6 +22,6 @@ export class SellPet implements ICommand {
             petArray.splice(indexInPetArr, 1);
         }
 
-        return Validator.getAnimaRemoved(+animalId);
+        return Validator.getAnimaRemovedMessage(+animalId);
     }
 }

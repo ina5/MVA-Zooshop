@@ -1,5 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
+import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { IPet } from '../../contratcs/pets-contracts/pets/pet';
@@ -14,8 +15,8 @@ export class ShowPet implements ICommand {
     public execute(parameters: string[]): string {
         const [animal, criteria, animalPrice] = parameters;
         const petArray: IPet[] | undefined = this._data.pets.get(animal);
-        if (petArray === undefined) {
-            throw new Error('PetArray is undefined!!!');
+        if (petArray === undefined || petArray.length === 0) {
+            throw new Error('PetArray is empty or undefined');
         } else {
 
             return this.searchAnimalByPriceCriteria(petArray, criteria, +animalPrice);
@@ -32,11 +33,11 @@ export class ShowPet implements ICommand {
         }
         let str: string = '';
 
-        petFilterPrice.forEach((el: IPet) => str += el.print());
+        petFilterPrice.forEach((el: IPet) => str += `\n###################\n ${el.print()}`);
         if (str === '') {
-            return `We can not find pet which have criteria: ${byCriteria} to ${price}`;
+            return Validator.getErrorMessage(`We can not find pet which have criteria: ${byCriteria} to ${price}`);
         }
 
-        return str;
+        return `Found ${str}`;
     }
 }

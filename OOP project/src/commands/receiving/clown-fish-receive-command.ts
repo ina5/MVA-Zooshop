@@ -36,6 +36,6 @@ export class ReceiveFish implements ICommand {
 
         this._zooShopDatabase.addPet('fish', fish);
 
-        return Validator.getReceived('Fish', breed);
+        return Validator.getReceivedMessage('Fish', breed);
     }
 }

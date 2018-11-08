@@ -1,7 +1,8 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
-import { IPet, IProduct } from '../../contratcs';
+import { IProduct } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
+import { Validator } from './../../common/validator';
 import { ICommand } from './../../contratcs/commands/command';
 @injectable()
 export class ListProducts implements ICommand {
@@ -11,7 +12,7 @@ export class ListProducts implements ICommand {
     }
     public execute(parameters: string[]): string {
         return `>> List available products.\n${this._zooshopDatabase.products.length === 0
-            ? 'There are no available foods at the moment...sorry.'
+            ? Validator.getErrorMessage('There are no available foods at the moment...sorry.')
             : this._zooshopDatabase.products.map((product: IProduct) => product.print()).join('\n#####################\n')
             }`;
     }
