@@ -15,9 +15,11 @@ export class ListPets implements ICommand {
             throw new Error('There is no pets to show!');
         } else {
             const str: string[] = [];
-            petMap.values().next().value.forEach((pet: IPet) => str.push(pet.print()));
+            petMap.forEach((petFromMap: IPet[]) => {
+                petFromMap.forEach((pet: IPet) => str.push(pet.print()));
+            });
 
-            return `>> List available pets\n${str.join('\n###################\n')}`;
+            return str.join('\n###################\n');
         }
     }
 }

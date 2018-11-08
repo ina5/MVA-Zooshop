@@ -2,7 +2,7 @@ export enum FoodType {
     canned = 'canned',
     granules = 'granules',
     paste = 'paste',
-    rodents = 'rodents',
+    mice = 'mice',
     seeds = 'seeds',
     insects = 'insects'
 }

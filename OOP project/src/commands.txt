@@ -1,45 +1,39 @@
-ReceiveDog Rottweiler 600 granules male short challenging true
-ReceiveDog Beagle 600 granules male short easy false
-ListPets
-//ReceiveCat Persian 400 paste female long hard false
-//ReceiveParrot Coral 40 seeds female false true
-SellPet dog 2
-ListPets
-//SellAnimalFromShop 2
-//SellAnimalFromShop 2
-//ReceiveFood K&P Purina 8 2
+ReceiveDog Rottweiler 600 granules male short challenging false
+////ReceiveDog Labrador 150 granules male short easy true
+////ReceiveDog Mops 1300 granules female short hard false
+////ReceiveDog Chao-Chao 7000 granules male long hard true
+
+//ReceiveCat Persian 500 paste female long hard false
+////ReceiveCat Siamese 8500 canned male long challenging false
+////ReceiveCat Bengal 8000 granules female long hard false
+////ReceiveCat Peterbald 3900 paste female short hard false
+
+//ReceiveParrot Ara 8000 seeds male true true
+////ReceiveParrot Cockatoos 2500 seeds female true true
+////ReceiveParrot Kakapo 1500 seeds male false true
+////ReceiveParrot Red-Lory 3000 seeds male false true
+
+//ReceiveSnake Viper 800 mice female grey true
+////ReceiveSnake Anakonda 1200 mice female brown true
+////ReceiveSnake Sok 200 mice female green false
+
+//ReceiveFish Nemo 5.50 seeds female orange/white fresh
+////ReceiveFish Piranoku 20 canned female matte-grey salt
+////ReceiveFish MiniShark 450 mice male matte-grey salt
+
+//ListPets
+//SellPet dog 1
+//SellPet fish 5
+//ListPets
+
+ReceiveFood One Purina 8 2
 //ReceiveFood Whiskas Pauch 8 1
 //ReceiveFood Kaufland SoftGranny 8 2
+//ReceiveFood JoroMishkara Mice 7 10
+//ReceiveFood Aqua NemoFood 0.50 20
+
 //ListProducts
-//SellFood K&P
-//SellFood Whiskas
-//SellFood Kaufland
-//ListProducts
-//ReceiveFood HairballManagement Purina 8 2
-//ListProducts
-//ReceiveDog Rottweiler 600 granules male short challenging true
-//ReceiveCat Persian 400 paste female long hard false
-//ReceiveDog Beagle 600 granules male short easy false
-//ReceiveParrot Coral 40 seeds female false true
-//ListPets 
-//SellAnimal 2
-//SellAnimal 3
-//SellAnimal 4
-//ListPets
-//ShowCategory Parrots
-//CreateProduct SundayFood Whiskas 20.99 2
-//Buy Dog 2
-//ReceiveDog Chihuahua 1000 granules female small normal true
-//ReceiveSnake Viper 800 rodents female brown true
-//ShowCategory Dogs
-//ReceiveSnake Smok 600 rodents male grey false
-//ShowCategory Cats
-//ReceiveParrot Wooly 50 seeds male false false
-//Buy Dog 1
-//ShowCategory Fish // EXEPTION ('Category ${} does not exist!')
-//ReceiveCat British 800 paste female long normal true
-//ReceiveFish Tetra 50 granules female purple fresh
-//ReceiveCat Siamese 250 paste male short normal true
-//CreateProduct FundayFood Pedigree 50.99 3
-//ListPets
+//SellFood Aqua 
+//SellFood JoroMishkara
+ListProducts
 
