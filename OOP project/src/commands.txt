@@ -1,3 +1,4 @@
+
 ReceiveDog Rottweiler 600 granules male short challenging false
 ////ReceiveDog Labrador 150 granules male short easy true
 ////ReceiveDog Mops 1300 granules female short hard false
@@ -27,13 +28,32 @@ ReceiveDog Rottweiler 600 granules male short challenging false
 //ListPets
 
 ReceiveFood One Purina 8 2
+
+ReceiveDog Rottweiler 300 granules male short challenging true
+ReceiveDog Beagle 700 granules male short easy false
+//ListPets
+//ReceiveCat Persian 400 paste female long hard false
+//ReceiveParrot Coral 40 seeds female false true
+//SellPet dog 2
+//ListPets
+//ListPet dog UpTo 600
+//ListPet dog Over 600
+//ListPet dog Equal 600
+//SellAnimalFromShop 2
+//SellAnimalFromShop 2
+//ReceiveFood K&P Purina 8 2
+
 //ReceiveFood Whiskas Pauch 8 1
 //ReceiveFood Kaufland SoftGranny 8 2
 //ReceiveFood JoroMishkara Mice 7 10
 //ReceiveFood Aqua NemoFood 0.50 20
 
 //ListProducts
+
 //SellFood Aqua 
 //SellFood JoroMishkara
 ListProducts
 
+ShowPet dog UpTo 600
+ShowPet dog Over 600
+ShowPet dog Equal 600
