@@ -5,7 +5,7 @@ export class PetFood implements IProduct {
     private readonly _name: string;
     private readonly _brand: string;
     private readonly _price: number;
-    private readonly _quantity: number;
+    private _quantity: number;
 
     constructor(name: string, brand: string, price: number, quantity: number) {
         if (name.length < 3) {
@@ -39,6 +39,9 @@ export class PetFood implements IProduct {
         return this._quantity;
     }
 
+    public set quantity(v: number) {
+        this._quantity = v;
+    }
     public print(): string {
         return `${this.name} ${this.brand}\nPrice: ${this.price}lv\nQuantity: ${this.quantity}`;
     }

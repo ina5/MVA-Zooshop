@@ -16,13 +16,18 @@ export class SellFood implements ICommand {
         this._data = data;
     }
     public execute(parameters: string[]): string {
-        const [name] = parameters;
+        const [name, quantity] = parameters;
 
-        const foundProductIdIndex: number = this._data.products.findIndex((food: IProduct) => food.name === name);
-        if (foundProductIdIndex === -1) {
+        const foundProductIndex: number = this._data.products.findIndex((food: IProduct) => food.name === name);
+        const quantityNumber: number = (Number(quantity));
+        if (foundProductIndex === -1) {
             throw new Error(Constants.getFoodNotFoundErrorMessage(name));
         }
-        this._data.products.splice(foundProductIdIndex, 1);
+        if (this._data.products[foundProductIndex].quantity - quantityNumber === 0) {
+            this._data.products.splice(foundProductIndex, 1);
+        } else {
+            this._data.products[foundProductIndex].quantity -= quantityNumber;
+        }
 
         return Constants.getFoodRemovedSuccessMessage(name);
     }
