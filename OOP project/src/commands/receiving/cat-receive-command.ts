@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
-import { Constants } from '../../common/constants';
 import { TYPES } from '../../common/TYPES';
+import { Validator } from '../../common/validator';
 import { ICommand, IModelsFactory, IPet } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { DifficultyDegree, FurType, Sex } from '../../models';
@@ -39,7 +39,7 @@ export class ReceiveCat implements ICommand {
         const cat: IPet = this._factory.receiveCat(breed, +price, food, gender, fur, degree, isSocial);
         this._zooShopDatabase.addPet('cat', cat);
 
-        return Constants.getCatReceivedSuccessMessage(breed);
+        return Validator.getReceived('Cat', breed);
 
     }
 }

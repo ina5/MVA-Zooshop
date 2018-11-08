@@ -6,7 +6,7 @@ import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database
 
 import { TYPES } from '../../common';
 
-import { Constants } from '../../common/constants';
+import { Validator } from '../../common/validator';
 
 @injectable()
 export class SellFood implements ICommand {
@@ -21,7 +21,7 @@ export class SellFood implements ICommand {
         const foundProductIndex: number = this._data.products.findIndex((food: IProduct) => food.name === name);
         const quantityNumber: number = (Number(quantity));
         if (foundProductIndex === -1) {
-            throw new Error(Constants.getFoodNotFoundErrorMessage(name));
+            throw new Error(Validator.getFoodNotFoundErrorMessage(name));
         }
         if (this._data.products[foundProductIndex].quantity - quantityNumber === 0) {
             this._data.products.splice(foundProductIndex, 1);
@@ -29,6 +29,6 @@ export class SellFood implements ICommand {
             this._data.products[foundProductIndex].quantity -= quantityNumber;
         }
 
-        return Constants.getFoodRemovedSuccessMessage(name);
+        return Validator.getFoodRemoved(name);
     }
 }

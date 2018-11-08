@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
-import { Constants } from '../../common/constants';
+import { Validator } from '../../common/validator';
 import { ICommand, IModelsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { Sex } from '../../models';
@@ -34,6 +34,6 @@ export class ReceiveParrot implements ICommand {
 
         this._zooShopDatabase.addPet('parrot', parrot);
 
-        return Constants.getParrotReceivedSuccessMessage(breed);
+        return Validator.getReceived('Parrot', breed);
     }
 }

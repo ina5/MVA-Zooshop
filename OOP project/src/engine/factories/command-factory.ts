@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import * as commands from '../../commands';
-import { Constants } from '../../common/constants';
 import { TYPES } from '../../common/TYPES';
+import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { ICommandFactory } from '../../contratcs/engine-contracts/factories/command-factory';
@@ -38,7 +38,7 @@ export class CommandFactory implements ICommandFactory {
     const command: (new (data: IZooShopDatabase, factory: IModelsFactory)
     => ICommand) | undefined = this._commands.get(lowerCaseCommandName);
     if (!command) {
-      throw new Error(Constants.getInvalidCommandErrorMessage(commandName));
+      throw new Error(Validator.getInvalidCommandErrorMessage(commandName));
     }
 
     return new command(this._data, this._modelsFactory);

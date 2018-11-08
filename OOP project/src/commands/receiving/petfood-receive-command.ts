@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
-import { Constants } from '../../common/constants';
+import { Validator } from '../../common/validator';
 import { ICommand, IModelsFactory, IProduct } from '../../contratcs';
 import { IZooShopDatabase } from './../../contratcs/data-contract/zooShop-database';
 
@@ -25,6 +25,6 @@ export class ReceiveFood implements ICommand {
         const food: IProduct = this._factory.receiveFood(name, brand, +price, +quantity);
         this._zooShopDatabase.products.push(food);
 
-        return Constants.getFoodReceivedSuccessMessage(brand);
+        return Validator.getFoodReceived(brand);
     }
 }

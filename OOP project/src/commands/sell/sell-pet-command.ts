@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../../common';
-import { Constants } from '../../common/constants';
+import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { IPet } from '../../contratcs/pets-contracts/pets/pet';
@@ -16,12 +16,12 @@ export class SellPet implements ICommand {
         const [animal, animalId] = parameters;
         const petArray: IPet[] | undefined = this._data.pets.get(animal);
         if (petArray === undefined) {
-            return Constants.getAnimalNotFoundErrorMessage(+animalId);
+            return Validator.getAnimalNotFoundErrorMessage(+animalId);
         } else {
             const indexInPetArr: number = petArray.findIndex((el: IPet) => el.id === +animalId);
             petArray.splice(indexInPetArr, 1);
         }
 
-        return Constants.getAnimaRemovedSuccessMessage(+animalId);
+        return Validator.getAnimaRemoved(+animalId);
     }
 }
