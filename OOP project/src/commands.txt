@@ -5,9 +5,9 @@ ReceiveDog Beagle 700 granules male short easy false
 //ReceiveParrot Coral 40 seeds female false true
 //SellPet dog 2
 //ListPets
-ListPet dog UpTo 600
-ListPet dog Over 600
-ListPet dog Equal 600
+//ListPet dog UpTo 600
+//ListPet dog Over 600
+//ListPet dog Equal 600
 //SellAnimalFromShop 2
 //SellAnimalFromShop 2
 //ReceiveFood K&P Purina 8 2
@@ -20,10 +20,11 @@ ListPet dog Equal 600
 //ListProducts
 //ReceiveFood HairballManagement Purina 8 2
 //ListProducts
-//ReceiveDog Rottweiler 600 granules male short challenging true
-//ReceiveCat Persian 400 paste female long hard false
-//ReceiveDog Beagle 600 granules male short easy false
-//ReceiveParrot Coral 40 seeds female false true
+ReceiveDog Rottweiler 600 granules male short challenging true
+ReceiveCat Persian 400 paste female long hard false
+ReceiveDog Beagle 600 granules male short easy false
+ReceiveParrot Coral 40 seeds female false true
+//ListPets
 //ListPets 
 //SellAnimal 2
 //SellAnimal 3
@@ -46,3 +47,6 @@ ListPet dog Equal 600
 //CreateProduct FundayFood Pedigree 50.99 3
 //ListPets
 
+ShowPet dog UpTo 600
+ShowPet dog Over 600
+ShowPet dog Equal 600
