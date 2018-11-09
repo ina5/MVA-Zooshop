@@ -19,6 +19,9 @@ export class SellPet implements ICommand {
             return Validator.getAnimalNotFoundErrorMessage(+animalId);
         } else {
             const indexInPetArr: number = petArray.findIndex((el: IPet) => el.id === +animalId);
+            // Const petItem: Map<string, IPet> | IProduct = petArray.splice(indexInPetArr, 1);
+            const soldPet: IPet = petArray[indexInPetArr];
+            this._data.shoppingCart.push(soldPet);
             petArray.splice(indexInPetArr, 1);
         }
 

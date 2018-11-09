@@ -1,6 +1,4 @@
-import { CommandParser } from './../engine/providers/command-parser';
-import { IType } from './type-interface';
-// tslint:disable-next-line:no-any
+import { IType } from '../common/type-interface';
 export const TYPES: IType = {
     reader: Symbol.for('reader'),
     writer: Symbol.for('writer'),

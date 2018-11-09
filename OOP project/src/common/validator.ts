@@ -24,6 +24,6 @@ export class Validator {
         return `Х Food ${name} was already sold! :(`;
     }
     public static getErrorMessage(message: string): string {
-        throw `X Opps ${message}`;
+        return `X Opps ${message}`;
     }
 }

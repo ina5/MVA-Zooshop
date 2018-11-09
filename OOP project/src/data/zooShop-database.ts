@@ -9,10 +9,12 @@ export class ZooShopDatabase implements IZooShopDatabase {
     private readonly _pets: Map<string, IPet[]>;
 
     private readonly _products: IProduct[];
+    private readonly _shoppingCart: (IPet | IProduct)[];
 
     public constructor() {
         this._pets = new Map();
         this._products = [];
+        this._shoppingCart = [];
     }
 
     public get pets(): Map<string, IPet[]> {
@@ -21,6 +23,9 @@ export class ZooShopDatabase implements IZooShopDatabase {
 
     public get products(): IProduct[] {
         return this._products;
+    }
+    public get shoppingCart(): (IPet | IProduct)[] {
+        return this._shoppingCart;
     }
 
     public addPet(key: string, pet: IPet): void {

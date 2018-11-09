@@ -21,7 +21,7 @@ const container: Container = new Container();
 
 container.bind<IZooShopDatabase>(TYPES.zooShopDatabase).to(ZooShopDatabase).inSingletonScope();
 container.bind<IModelsFactory>(TYPES.modelsFactory).to(ModelsFactory).inSingletonScope();
-container.bind<ICommandProcessor>(TYPES.commandProcessor).to(CommandProcessor).inTransientScope();
+container.bind<ICommandProcessor>(TYPES.commandProcessor).to(CommandProcessor).inSingletonScope();
 
 container.bind<ICommandParser>(TYPES.commandParser).to(CommandParser);
 container.bind<IReader>(TYPES.reader).to(FileReader);

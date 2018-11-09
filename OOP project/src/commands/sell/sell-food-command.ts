@@ -20,6 +20,9 @@ export class SellFood implements ICommand {
 
         const foundProductIndex: number = this._data.products.findIndex((food: IProduct) => food.name === name);
         const quantityNumber: number = (Number(quantity));
+        const productItem: IProduct = this._data.products[foundProductIndex];
+        productItem.quantity = quantityNumber;
+        this._data.shoppingCart.push(productItem);
         if (foundProductIndex === -1) {
             return Validator.getFoodNotFoundErrorMessage(name);
         }
