@@ -1,6 +1,9 @@
 import { Container } from 'inversify';
 import { IDataFormatter, IModelsFactory, IReader } from '../contratcs';
-import { ModelsFactory } from '../engine/factories/models-factory';
+import { IDataSeeder } from '../contratcs/engine-contracts/providers/data-seeder';
+import { IUserSession } from '../contratcs/engine-contracts/providers/user-session';
+import { DataSeeder } from '../engine/providers/data-seeder';
+import { UserSession } from '../engine/providers/user-session';
 import { IZooShopDatabase } from './../contratcs/data-contract/zooShop-database';
 import { IEngine } from './../contratcs/engine-contracts/engine';
 import { ICommandFactory } from './../contratcs/engine-contracts/factories/command-factory';
@@ -10,6 +13,7 @@ import { IWriter } from './../contratcs/engine-contracts/providers/writer';
 import { ZooShopDatabase } from './../data/zooShop-database';
 import { Engine } from './../engine/engine';
 import { CommandFactory } from './../engine/factories/command-factory';
+import { ModelsFactory } from './../engine/factories/models-factory';
 import { CommandParser } from './../engine/providers/command-parser';
 import { CommandProcessor } from './../engine/providers/command-processor';
 import { ConsoleWriter } from './../engine/providers/console-writer';
@@ -20,14 +24,14 @@ import { TYPES } from './TYPES';
 const container: Container = new Container();
 
 container.bind<IZooShopDatabase>(TYPES.zooShopDatabase).to(ZooShopDatabase).inSingletonScope();
-container.bind<IModelsFactory>(TYPES.modelsFactory).to(ModelsFactory).inSingletonScope();
-container.bind<ICommandProcessor>(TYPES.commandProcessor).to(CommandProcessor).inTransientScope();
-
+container.bind<ICommandProcessor>(TYPES.commandProcessor).to(CommandProcessor).inSingletonScope();
 container.bind<ICommandParser>(TYPES.commandParser).to(CommandParser);
 container.bind<IReader>(TYPES.reader).to(FileReader);
 container.bind<IWriter>(TYPES.writer).to(ConsoleWriter);
 container.bind<IEngine>(Engine).to(Engine);
+container.bind<IModelsFactory>(TYPES.modelsFactory).to(ModelsFactory).inSingletonScope();
 container.bind<IDataFormatter>(TYPES.dataFormatter).to(DataFormatter);
 container.bind<ICommandFactory>(TYPES.commandFactory).to(CommandFactory);
-
+container.bind<IUserSession>(TYPES.userSession).to(UserSession).inSingletonScope();
+container.bind<IDataSeeder>(TYPES.dataSeeder).to(DataSeeder);
 export { container };

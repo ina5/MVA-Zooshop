@@ -5,21 +5,23 @@ import { ICommand, IModelsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { Sex, WaterType } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
+import { EmployeeCommand } from '../abstract/employee-command';
+import { IUserSession } from './../../contratcs/engine-contracts/providers/user-session';
 import { IFish } from './../../contratcs/pets-contracts/pets/fish';
 @injectable()
-export class ReceiveFish implements ICommand {
+export class ReceiveFish extends EmployeeCommand implements ICommand {
     private _factory: IModelsFactory;
-    private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
+        @inject(TYPES.userSession) user: IUserSession,
         @inject(TYPES.modelsFactory) factory: IModelsFactory) {
-        this._zooShopDatabase = data;
+        super(data, user);
         this._factory = factory;
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, color, waterType] = parameters;
-
+        super.execute(parameters);
         if (isNaN(+price)) {
             throw new Error('Failed to parse ReceiveFish command parameters.');
         }

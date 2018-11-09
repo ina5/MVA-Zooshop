@@ -11,5 +11,7 @@ export const TYPES: IType = {
     productFactory: Symbol.for('productFactory'),
     dataFormatter: Symbol.for('dataFormatter'),
     commandProcessor: Symbol.for('commandProcessor'),
-    commandParser: Symbol.for('commandParser')
+    commandParser: Symbol.for('commandParser'),
+    userSession: Symbol.for('userSession'),
+    dataSeeder: Symbol.for('dataSeeder')
 };

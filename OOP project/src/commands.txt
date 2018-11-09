@@ -1,5 +1,9 @@
-
-ReceiveDog Rottweiler 600 granules male short challenging false
+//Login Pesho
+//ReceiveDog Rottweiler 600 granules male short challenging false
+Login Gosho
+//LogOut
+//ReceiveDog Labrador 150 granules male short easy true
+//LogOut
 ////ReceiveDog Labrador 150 granules male short easy true
 ////ReceiveDog Mops 1300 granules female short hard false
 ////ReceiveDog Chao-Chao 7000 granules male long hard true
@@ -27,10 +31,10 @@ ReceiveDog Rottweiler 600 granules male short challenging false
 //SellPet fish 5
 //ListPets
 
-ReceiveFood One Purina 8 2
+//ReceiveFood One Purina 8 2
 
-ReceiveDog Rottweiler 300 granules male short challenging true
-ReceiveDog Beagle 700 granules male short easy false
+//ReceiveDog Rottweiler 300 granules male short challenging true
+//ReceiveDog Beagle 700 granules male short easy false
 //ListPets
 //ReceiveCat Persian 400 paste female long hard false
 //ReceiveParrot Coral 40 seeds female false true
@@ -52,8 +56,8 @@ ReceiveDog Beagle 700 granules male short easy false
 
 //SellFood Aqua 
 //SellFood JoroMishkara
-ListProducts
+//ListProducts
 
-ShowPet dog UpTo 600
-ShowPet dog Over 600
-ShowPet dog Equal 600
+//ShowPet dog UpTo 600
+//ShowPet dog Over 600
+//ShowPet dog Equal 600

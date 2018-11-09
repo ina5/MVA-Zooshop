@@ -13,6 +13,9 @@ export class Validator {
     public static getFoodRemovedMessage(name: string): string {
         return `- Zooshop sell food ${name}`;
     }
+    public static getSuccessMessage(message: string): string {
+        return `${message}`;
+    }
     // error messages
     public static getInvalidCommandErrorMessage(commandName: string): string {
         return `Х Invalid command name: ${commandName}`;

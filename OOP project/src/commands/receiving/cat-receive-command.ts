@@ -3,25 +3,26 @@ import { TYPES } from '../../common/TYPES';
 import { Validator } from '../../common/validator';
 import { ICommand, IModelsFactory, IPet } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
+import { IUserSession } from '../../contratcs/engine-contracts/providers/user-session';
 import { DifficultyDegree, FurType, Sex } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
-import { IMammal } from './../../contratcs/pets-contracts/pets/mammal';
+import { EmployeeCommand } from '../abstract/employee-command';
 
 @injectable()
-export class ReceiveCat implements ICommand {
+export class ReceiveCat extends EmployeeCommand implements ICommand {
     private _factory: IModelsFactory;
-    private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
+        @inject(TYPES.userSession) user: IUserSession,
         @inject(TYPES.modelsFactory) factory: IModelsFactory) {
-        this._zooShopDatabase = data;
+        super(data, user);
         this._factory = factory;
-
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, furType, trainable, social] = parameters;
 
+        super.execute(parameters);
         if (isNaN(+price) || (social !== 'true' && social !== 'false')) {
             throw new Error('Failed to parse ReceiveCat command parameters.');
         }
