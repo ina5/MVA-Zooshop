@@ -1,6 +1,6 @@
 //Login Pesho
 //ReceiveDog Rottweiler 600 granules male short challenging false
-Login Gosho
+//Login Gosho
 //LogOut
 //ReceiveDog Labrador 150 granules male short easy true
 //LogOut

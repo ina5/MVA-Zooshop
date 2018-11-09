@@ -8,7 +8,7 @@ import { IUser } from '../../contratcs/user-contract';
 import { Role } from '../../models';
 
 @injectable()
-export class LogIn implements ICommand {
+export class Login implements ICommand {
     private readonly _zooShopDatabase: IZooShopDatabase;
     private readonly _userSession: IUserSession;
     private readonly _factory: IModelsFactory;
