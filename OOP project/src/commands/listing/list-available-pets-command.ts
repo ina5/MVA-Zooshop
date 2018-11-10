@@ -1,6 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { TYPES } from '../../common';
-import { Validator } from '../../common/validator';
+import { TYPES, Validator } from '../../common';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { ICommand } from './../../contratcs/commands/command';
 import { IPet } from './../../contratcs/pets-contracts/pets/pet';
@@ -12,15 +11,16 @@ export class ListPets implements ICommand {
     }
     public execute(parameters: string[]): string {
         const petMap: Map<string, IPet[]> = this._zooshopDatabase.pets;
+
         if (petMap === undefined || petMap.size === 0) {
-            throw new Error('Map is empty or undefined');
+            return `${Validator.getErrorMessage('Map is empty or undefined')}`;
         } else {
             const str: string[] = [];
             petMap.forEach((petFromMap: IPet[]) => {
                 petFromMap.forEach((pet: IPet) => str.push(pet.print()));
             });
 
-            return str.join('\n###################\n');
+            return `\n>> List available pets.\n######################\n${str.join('\n\n')}\n######################\n`;
         }
     }
 }

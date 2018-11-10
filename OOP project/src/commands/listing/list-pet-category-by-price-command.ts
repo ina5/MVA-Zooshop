@@ -9,35 +9,32 @@ import { IPet } from '../../contratcs/pets-contracts/pets/pet';
 export class ShowPet implements ICommand {
     private readonly _data: IZooShopDatabase;
 
-    public constructor(@inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
+    public constructor(
+        @inject(TYPES.zooShopDatabase) data: IZooShopDatabase
+    ) {
         this._data = data;
     }
     public execute(parameters: string[]): string {
         const [animal, criteria, animalPrice] = parameters;
         const petArray: IPet[] | undefined = this._data.pets.get(animal);
-        if (petArray === undefined || petArray.length === 0) {
-            throw new Error('PetArray is empty or undefined');
-        } else {
 
-            return this.searchAnimalByPriceCriteria(petArray, criteria, +animalPrice);
-        }
+        return `${petArray === undefined || petArray.length === 0
+            ? Validator.getErrorMessage(`we don\'t have ${animal} pets at the moment.`)
+            : this.searchAnimalByPriceCriteria(petArray, criteria, +animalPrice)}`;
     }
-    private searchAnimalByPriceCriteria(petFoundArray: IPet[], byCriteria: string, price: number): string {
+    private searchAnimalByPriceCriteria(petFoundArray: IPet[], criteria: string, price: number): string {
         let petFilterPrice: IPet[] = [];
-        if (byCriteria === 'Equal') {
+        if (criteria === 'equal') {
             petFilterPrice = petFoundArray.filter((el: IPet) => el.price === price);
-        } else if (byCriteria === 'UpTo') {
+        } else if (criteria === 'to') {
             petFilterPrice = petFoundArray.filter((el: IPet) => el.price < price);
-        } else if (byCriteria === 'Over') {
+        } else if (criteria === 'over') {
             petFilterPrice = petFoundArray.filter((el: IPet) => el.price > price);
         }
-        let str: string = '';
 
-        petFilterPrice.forEach((el: IPet) => str += `\n###################\n ${el.print()}`);
-        if (str === '') {
-            return Validator.getErrorMessage(`We can not find pet which have criteria: ${byCriteria} to ${price}`);
-        }
-
-        return `Found ${str}`;
+        return `\n>> List filtered pets.\n${petFilterPrice.length === 0
+            ? Validator.getErrorMessage(`we haven\'t pet which is ${criteria} ${price}lv`)
+            : petFilterPrice.map((el: IPet) => el.print()).join('\n\n')
+            }`;
     }
 }
