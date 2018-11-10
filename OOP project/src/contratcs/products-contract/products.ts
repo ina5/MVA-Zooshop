@@ -4,5 +4,5 @@ export interface IProduct extends IPrinter {
     name: string;
     brand: string;
     price: number;
-    quantity: number;
+    weight: number;
 }

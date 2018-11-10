@@ -16,12 +16,12 @@ export class ReceiveFood implements ICommand {
 
     }
     public execute(parameters: string[]): string {
-        const [name, brand, price, quantity] = parameters;
+        const [name, brand, price, weight] = parameters;
 
-        if (isNaN(+price) || isNaN(+quantity)) {
+        if (isNaN(+price) || isNaN(+weight)) {
             throw new Error('Failed to parse ReceiveFood command parameters.');
         }
-        const food: IProduct = this._factory.receiveFood(name, brand, +price, +quantity);
+        const food: IProduct = this._factory.receiveFood(name, brand, +price, +weight);
         this._zooShopDatabase.products.push(food);
 
         return Validator.getFoodReceivedMessage(brand);
