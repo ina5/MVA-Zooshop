@@ -1,26 +1,30 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../common';
-import { ICommand } from '../contratcs/commands/command';
-import { ICommandFactory, IEngine, IReader, IWriter } from '../contratcs/engine-contracts';
+import { IEngine, IReader, IWriter } from '../contratcs/engine-contracts';
 import { ICommandProcessor } from './../contratcs/engine-contracts/providers/command-processor';
+import { IDataSeeder } from './../contratcs/engine-contracts/providers/data-seeder';
 
 @injectable()
 export class Engine implements IEngine {
   private readonly _reader: IReader;
   private readonly _writer: IWriter;
   private readonly _commandProcessor: ICommandProcessor;
+  private readonly _dataSeeder: IDataSeeder;
 
   public constructor(
     @inject(TYPES.reader) _reader: IReader,
     @inject(TYPES.writer) _writer: IWriter,
-    @inject(TYPES.commandProcessor) _commandProcessor: ICommandProcessor
+    @inject(TYPES.commandProcessor) _commandProcessor: ICommandProcessor,
+    @inject(TYPES.dataSeeder) _dataSeeder: IDataSeeder
   ) {
     this._reader = _reader;
     this._writer = _writer;
     this._commandProcessor = _commandProcessor;
+    this._dataSeeder = _dataSeeder;
   }
 
   public async start(): Promise<void> {
+    this._dataSeeder.seedData();
     const commands: string[] = await this._reader.read();
 
     const commandResults: string[] = commands.map((command: string) => {

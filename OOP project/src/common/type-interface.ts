@@ -10,4 +10,5 @@ export interface IType {
     dataFormatter: any;
     commandProcessor: any;
     commandParser: any;
+    dataSeeder: any;
 }
