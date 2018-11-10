@@ -13,6 +13,8 @@ export abstract class EmployeeCommand implements ICommand {
     public execute(parameters: string[]): string {
         if (this._zooShopDatabase.currentUser.role === Role.client) {
             throw new Error(`Invalid command for current User's Role`);
+        } else if (this._zooShopDatabase.currentUser.role === Role.empty) {
+            throw new Error(`No user in the current session!`);
         }
 
         return Validator.getLogSuccessfulMessage('Validation successfull!');

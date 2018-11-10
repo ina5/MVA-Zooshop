@@ -21,7 +21,9 @@ export class Login implements ICommand {
     }
     public execute(parameters: string[]): string {
         const [name] = parameters;
-        if (this._data.currentUser.name === name || this._data.currentUser.role === Role.client) {
+        if (this._data.currentUser.name === name
+            || this._data.currentUser.role === Role.client
+            || this._data.currentUser.role === Role.employee) {
             return Validator.getErrorMessage('There is a user already log in. Please Log out first!');
         } else if (name === 'Owner') {
             const admin: IUser | undefined = this._data.users.find((el: IUser) => el.name === name);
