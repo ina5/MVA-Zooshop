@@ -4,24 +4,24 @@ import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { IPet } from '../../contratcs/pets-contracts/pets/pet';
+import { ClientCommand } from '../abstract/client-command';
 
 @injectable()
-export class SellPet implements ICommand {
-    private readonly _data: IZooShopDatabase;
+export class BuyPet extends ClientCommand implements ICommand {
 
     public constructor(@inject(TYPES.zooShopDatabase) data: IZooShopDatabase) {
-        this._data = data;
+        super(data);
     }
     public execute(parameters: string[]): string {
         const [animal, animalId] = parameters;
-        const petArray: IPet[] | undefined = this._data.pets.get(animal);
+        const petArray: IPet[] | undefined = this._zooShopDatabase.pets.get(animal);
         if (petArray === undefined) {
             return Validator.getAnimalNotFoundErrorMessage(+animalId);
         } else {
             const indexInPetArr: number = petArray.findIndex((el: IPet) => el.id === +animalId);
             // Const petItem: Map<string, IPet> | IProduct = petArray.splice(indexInPetArr, 1);
             const soldPet: IPet = petArray[indexInPetArr];
-            this._data.shoppingCart.push(soldPet);
+            this._zooShopDatabase.shoppingCart.push(soldPet);
             petArray.splice(indexInPetArr, 1);
         }
 

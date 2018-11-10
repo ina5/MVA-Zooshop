@@ -4,18 +4,17 @@ import { ICommand, IModelsFactory, IPet } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { DifficultyDegree, FurType, Sex } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
+import { EmployeeCommand } from '../abstract/employee-command';
 
 @injectable()
-export class ReceiveCat implements ICommand {
+export class ReceiveCat extends EmployeeCommand implements ICommand {
     private _factory: IModelsFactory;
-    private _zooShopDatabase: IZooShopDatabase;
 
     constructor(
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
         @inject(TYPES.modelsFactory) factory: IModelsFactory) {
-        this._zooShopDatabase = data;
+        super(data);
         this._factory = factory;
-
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, furType, trainable, social] = parameters;
