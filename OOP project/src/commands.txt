@@ -1,6 +1,7 @@
 Login Owner
-Login Manaf
-Logout
+//Login Manaf
+//Logout
+//Logout
 
 /////////////
 //// DOG ////
@@ -8,7 +9,7 @@ Logout
 //ReceiveDog Rottweiler 600 granules male short challenging false
 //ReceiveDog Labrador 150 granules male short easy true
 //ReceiveDog Mops 1300 granules female short hard false
-//ReceiveDog Chao-Chao 7000 granules male long hard true
+ReceiveDog Chao-Chao 7000 granules male long hard true
 
 /////////////
 //// CAT ////
@@ -16,7 +17,7 @@ Logout
 //ReceiveCat Persian 500 paste female long hard false
 //ReceiveCat Siamese 8500 canned male long challenging false
 //ReceiveCat Bengal 8000 granules female long hard false
-//ReceiveCat Peterbald 3900 paste female short hard false
+ReceiveCat Peterbald 3900 paste female short hard false
 
 ////////////////
 //// PARROT ////
@@ -24,29 +25,31 @@ Logout
 //ReceiveParrot Ara 8000 seeds male true true
 //ReceiveParrot Cockatoos 2500 seeds female true true
 //ReceiveParrot Kakapo 1500 seeds male false true
-//ReceiveParrot Red-Lory 3000 seeds male false true
+ReceiveParrot Red-Lory 3000 seeds male false true
 
 ///////////////
 //// SNAKE ////
 ///////////////
 //ReceiveSnake Viper 800 mice female grey true
 //ReceiveSnake Anakonda 1200 mice female brown true
-//ReceiveSnake Sok 200 mice female green false
+ReceiveSnake Sok 200 mice female green false
 
 //////////////
 //// FISH ////
 //////////////
-ReceiveFish Nemo 5.50 seeds female orange/white fresh
-ReceiveFish Piranoku 9.60 canned female matte-grey salt
-ReceiveFish Nemo 5.50 seeds female orange/white fresh
-ReceiveFish Piranoku 20 canned female matte-grey salt
+//ReceiveFish Nemo 5.50 seeds female orange/white fresh
+//ReceiveFish Piranoku 9.60 canned female matte-grey salt
+//ReceiveFish Nemo 5.50 seeds female orange/white fresh
+//ReceiveFish Piranoku 20 canned female matte-grey salt
 ReceiveFish MiniShark 450 mice male matte-grey salt
 
-ShowPet fish
+//Logout
+//Login Manaf
+//ShowPet fish
 //ListPets
-//SellPet dog 1
-//SellPet cat 2
-//SellPet fish 5
+//BuyPet dog 1
+//BuyPet cat 2
+//BuyPet fish 5
 //ListPets
 
 //////////////
@@ -56,11 +59,13 @@ ShowPet fish
 //ReceiveFood Whiskas Pauch 8 1
 //ReceiveFood Kaufland SoftGranny 8 2
 //ReceiveFood JoroMishkara Mice 7 10
-//ReceiveFood Aqua NemoFood 5 800
+ReceiveFood Aqua NemoFood 5 800
 
 //ListProducts
-//SellFood Aqua 
-//SellFood JoroMishkara 
+Logout
+Login Minka
+BuyFood Aqua 
+//BuyFood JoroMishkara 
 //ListProducts
 
 //////////////
@@ -71,5 +76,5 @@ ShowPet fish
 //ShowPet dog over 5000
 //Show dog equal 600
 
-//Checkout
+Checkout
 
