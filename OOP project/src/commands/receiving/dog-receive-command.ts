@@ -1,6 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { TYPES } from '../../common';
-import { Validator } from '../../common/validator';
+import { TYPES, Validator } from '../../common';
 import { ICommand, IModelsFactory } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { DifficultyDegree, FurType, Sex } from '../../models';

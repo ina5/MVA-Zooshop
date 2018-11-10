@@ -1,4 +1,3 @@
-import { CommandParser } from './../engine/providers/command-parser';
 // tslint:disable all -next-line:no-any
 export interface IType {
     reader: any;

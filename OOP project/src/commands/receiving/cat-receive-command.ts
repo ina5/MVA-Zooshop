@@ -1,11 +1,9 @@
 import { inject, injectable } from 'inversify';
-import { TYPES } from '../../common/TYPES';
-import { Validator } from '../../common/validator';
+import { TYPES, Validator } from '../../common';
 import { ICommand, IModelsFactory, IPet } from '../../contratcs';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { DifficultyDegree, FurType, Sex } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
-import { IMammal } from './../../contratcs/pets-contracts/pets/mammal';
 
 @injectable()
 export class ReceiveCat implements ICommand {
