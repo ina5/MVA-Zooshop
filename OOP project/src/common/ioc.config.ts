@@ -1,6 +1,5 @@
 import { Container } from 'inversify';
 import { IDataFormatter, IModelsFactory, IReader } from '../contratcs';
-import { DataSeeder } from '../engine';
 import { ModelsFactory } from '../engine/factories/models-factory';
 import { IZooShopDatabase } from './../contratcs/data-contract/zooShop-database';
 import { IEngine } from './../contratcs/engine-contracts/engine';
@@ -8,7 +7,6 @@ import { ICommandFactory } from './../contratcs/engine-contracts/factories/comma
 import { ICommandParser } from './../contratcs/engine-contracts/providers/command-parser';
 import { ICommandProcessor } from './../contratcs/engine-contracts/providers/command-processor';
 import { IDataSeeder } from './../contratcs/engine-contracts/providers/data-seeder';
-import { IUserSession } from './../contratcs/engine-contracts/providers/user-session';
 import { IWriter } from './../contratcs/engine-contracts/providers/writer';
 import { ZooShopDatabase } from './../data/zooShop-database';
 import { Engine } from './../engine/engine';
@@ -17,8 +15,8 @@ import { CommandParser } from './../engine/providers/command-parser';
 import { CommandProcessor } from './../engine/providers/command-processor';
 import { ConsoleWriter } from './../engine/providers/console-writer';
 import { DataFormatter } from './../engine/providers/data-formatter';
+import { DataSeeder } from './../engine/providers/data-seeder';
 import { FileReader } from './../engine/providers/file-reader';
-import { UserSession } from './../engine/providers/user-session';
 import { TYPES } from './TYPES';
 
 const container: Container = new Container();
@@ -35,7 +33,5 @@ container.bind<IDataFormatter>(TYPES.dataFormatter).to(DataFormatter);
 container.bind<ICommandFactory>(TYPES.commandFactory).to(CommandFactory);
 
 //
-container.bind<IUserSession>(TYPES.userSession).to(UserSession);
 container.bind<IDataSeeder>(TYPES.dataSeeder).to(DataSeeder);
-
 export { container };

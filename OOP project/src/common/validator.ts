@@ -13,6 +13,9 @@ export class Validator {
     public static getFoodRemovedMessage(name: string): string {
         return `- Zooshop sell food ${name}`;
     }
+    public static getSuccessfulMessage(message: string): string {
+        return `+ Command is accepted: ${message}`;
+    }
     // error messages
     public static getInvalidCommandErrorMessage(commandName: string): string {
         return `Х Invalid command name: ${commandName}`;
@@ -24,6 +27,6 @@ export class Validator {
         return `Х Food ${name} was already sold! :(`;
     }
     public static getErrorMessage(message: string): string {
-        return `X Opps ${message}`;
+        return `X Command is not accepted: ${message}`;
     }
 }

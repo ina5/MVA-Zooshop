@@ -6,6 +6,7 @@ export interface IZooShopDatabase {
     shoppingCart: (IPet | IProduct)[];
 
     users: IUser[];
+    currentUser: IUser;
 
     addPet(key: string, pet: IPet): void;
 }

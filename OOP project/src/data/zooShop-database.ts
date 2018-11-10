@@ -13,6 +13,7 @@ export class ZooShopDatabase implements IZooShopDatabase {
     private readonly _shoppingCart: (IPet | IProduct)[];
 
     private readonly _users: IUser[];
+    private _currentUser: IUser;
 
     public constructor() {
         this._pets = new Map();
@@ -37,6 +38,13 @@ export class ZooShopDatabase implements IZooShopDatabase {
         return this._users;
     }
 
+    public get currentUser(): IUser {
+        return this._currentUser;
+    }
+
+    public set currentUser(v: IUser) {
+        this._currentUser = v;
+    }
     public addPet(key: string, pet: IPet): void {
         if (!this._pets.has(key)) {
             this._pets.set(key, []);
