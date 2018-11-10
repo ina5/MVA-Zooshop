@@ -17,7 +17,7 @@ export class BuyFood extends ClientCommand implements ICommand {
     }
     public execute(parameters: string[]): string {
         const [name] = parameters;
-
+        super.execute(parameters);
         const foundProductIndex: number = this._zooShopDatabase.products.findIndex((food: IProduct) => food.name === name);
         if (foundProductIndex === -1) {
             return Validator.getFoodNotFoundErrorMessage(name);

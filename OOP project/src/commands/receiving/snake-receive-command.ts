@@ -19,6 +19,7 @@ export class ReceiveSnake extends EmployeeCommand implements ICommand {
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, skinColor, isVenomous] = parameters;
+        super.execute(parameters);
         if (isNaN(+price) || (isVenomous !== 'true' && isVenomous !== 'false')) {
             throw new Error('Failed to parse ReceiveSnake command parameters.');
         }

@@ -14,6 +14,7 @@ export class BuyPet extends ClientCommand implements ICommand {
     }
     public execute(parameters: string[]): string {
         const [animal, animalId] = parameters;
+        super.execute(parameters);
         const petArray: IPet[] | undefined = this._zooShopDatabase.pets.get(animal);
         if (petArray === undefined) {
             return Validator.getAnimalNotFoundErrorMessage(+animalId);

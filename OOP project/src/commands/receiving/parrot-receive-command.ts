@@ -19,7 +19,7 @@ export class ReceiveParrot extends EmployeeCommand implements ICommand {
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, canTalk, sing] = parameters;
-
+        super.execute(parameters);
         if (isNaN(+price) || (canTalk !== 'true' && canTalk !== 'false') || (sing !== 'true' && sing !== 'false')) {
             throw new Error('Failed to parse ReceiveDog command parameters.');
         }

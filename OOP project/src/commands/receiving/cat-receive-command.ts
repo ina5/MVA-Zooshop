@@ -18,7 +18,7 @@ export class ReceiveCat extends EmployeeCommand implements ICommand {
     }
     public execute(parameters: string[]): string {
         const [breed, price, foodType, sex, furType, trainable, social] = parameters;
-
+        super.execute(parameters);
         if (isNaN(+price) || (social !== 'true' && social !== 'false')) {
             throw new Error('Failed to parse ReceiveCat command parameters.');
         }

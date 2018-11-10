@@ -17,7 +17,7 @@ export class ReceiveFood extends EmployeeCommand implements ICommand {
     }
     public execute(parameters: string[]): string {
         const [name, brand, price, weight] = parameters;
-
+        super.execute(parameters);
         if (isNaN(+price) || isNaN(+weight)) {
             throw new Error('Failed to parse ReceiveFood command parameters.');
         }
