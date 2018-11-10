@@ -7,7 +7,7 @@ ReceiveDog Chao-Chao 7000 granules male long hard true
 ReceiveCat Persian 500 paste female long hard false
 Login Pesho
 Logout
-Login Gosho
+Login Owner
 //ReceiveCat Siamese 8500 canned male long challenging false
 //ReceiveCat Bengal 8000 granules female long hard false
 //ReceiveCat Peterbald 3900 paste female short hard false
@@ -62,3 +62,4 @@ ReceiveParrot Ara 8000 seeds male true true
 //ShowPet dog Equal 600
 //Checkout
 //ListPet dog
+//Checkout
