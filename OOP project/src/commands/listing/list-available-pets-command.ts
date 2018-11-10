@@ -13,7 +13,7 @@ export class ListPets implements ICommand {
         const petMap: Map<string, IPet[]> = this._zooshopDatabase.pets;
 
         if (petMap === undefined || petMap.size === 0) {
-            return `${Validator.getErrorMessage('Map is empty or undefined')}`;
+            return `${Validator.getErrorMessage('there is no pets in the shop')}`;
         } else {
             const str: string[] = [];
             petMap.forEach((petFromMap: IPet[]) => {

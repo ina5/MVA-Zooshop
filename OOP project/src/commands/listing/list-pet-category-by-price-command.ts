@@ -3,7 +3,7 @@ import { TYPES } from '../../common';
 import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
-import { IPet } from '../../contratcs/pets-contracts/pets/pet';
+import { IPet } from './../../contratcs/pets-contracts/pets/pet';
 
 @injectable()
 export class ShowPet implements ICommand {
@@ -18,9 +18,16 @@ export class ShowPet implements ICommand {
         const [animal, criteria, animalPrice] = parameters;
         const petArray: IPet[] | undefined = this._data.pets.get(animal);
 
-        return `${petArray === undefined || petArray.length === 0
-            ? Validator.getErrorMessage(`we don\'t have ${animal} pets at the moment.`)
-            : this.searchAnimalByPriceCriteria(petArray, criteria, +animalPrice)}`;
+        if (petArray === undefined || petArray.length === 0) {
+            return Validator.getErrorMessage('we haven\'t this kind of pet.');
+        } else if (criteria === undefined && animalPrice === undefined) {
+            // tslint:disable-next-line:max-line-length
+            return `\n>> List only ${animal}\n#####################\n${petArray.map((item: IPet) => item.print()).join('\n\n')}\n#####################\n`;
+        } else {
+
+            return this.searchAnimalByPriceCriteria(petArray, criteria, +animalPrice);
+        }
+
     }
     private searchAnimalByPriceCriteria(petFoundArray: IPet[], criteria: string, price: number): string {
         let petFilterPrice: IPet[] = [];

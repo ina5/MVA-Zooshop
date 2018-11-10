@@ -1,3 +1,7 @@
+Login Owner
+Login Manaf
+Logout
+
 /////////////
 //// DOG ////
 /////////////
@@ -32,12 +36,16 @@
 //////////////
 //// FISH ////
 //////////////
-//ReceiveFish Nemo 5.50 seeds female orange/white fresh
-//ReceiveFish Piranoku 9.60 canned female matte-grey salt
-//ReceiveFish MiniShark 450 mice male matte-grey salt
+ReceiveFish Nemo 5.50 seeds female orange/white fresh
+ReceiveFish Piranoku 9.60 canned female matte-grey salt
+ReceiveFish Nemo 5.50 seeds female orange/white fresh
+ReceiveFish Piranoku 20 canned female matte-grey salt
+ReceiveFish MiniShark 450 mice male matte-grey salt
 
+ShowPet fish
 //ListPets
 //SellPet dog 1
+//SellPet cat 2
 //SellPet fish 5
 //ListPets
 
@@ -48,19 +56,16 @@
 //ReceiveFood Whiskas Pauch 8 1
 //ReceiveFood Kaufland SoftGranny 8 2
 //ReceiveFood JoroMishkara Mice 7 10
-//ReceiveFood Aqua NemoFood 5 20
+//ReceiveFood Aqua NemoFood 5 800
 
 //ListProducts
-//SellFood Aqua 2
-//SellFood JoroMishkara
+//SellFood Aqua 
+//SellFood JoroMishkara 
 //ListProducts
 
 //////////////
 /// FILTER ///
 //////////////
-//ListPet dog UpTo 600
-//ListPet dog Over 600
-//ListPet dog Equal 600
 
 //ShowPet fish to 10
 //ShowPet dog over 5000
