@@ -5,6 +5,9 @@ import { IBird, IFish, IMammal, IReptile } from '../../contratcs/pets-contracts/
 import { Cat, ClownFish, DifficultyDegree, Dog, FurType, Parrot, Sex, Snake, WaterType } from '../../models';
 import { FoodType } from '../../models/enum/food-type';
 import { PetFood } from '../../models/products/petfood-model';
+import { User } from '../../models/user';
+import { IUser } from './../../contratcs/user-contract/user';
+import { Role } from './../../models/enum/role';
 @injectable()
 // tslint:disable all -next-line:max-line-length
 export class ModelsFactory implements IModelsFactory {
@@ -25,7 +28,10 @@ export class ModelsFactory implements IModelsFactory {
     return new ClownFish(breed, price, foodType, sex, color, waterType);
   }
   // Product factories
-  public receiveFood(name: string, brand: string, price: number, quantity: number): IProduct {
-    return new PetFood(name, brand, price, quantity);
+  public receiveFood(name: string, brand: string, price: number, weight: number): IProduct {
+    return new PetFood(name, brand, price, weight);
+  }
+  public registerUser(name: string, role: Role): IUser {
+    return new User(name, role);
   }
 }
