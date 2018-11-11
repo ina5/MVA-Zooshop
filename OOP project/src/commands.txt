@@ -1,7 +1,7 @@
 Login Owner
-//Login Manaf
-//Logout
-//Logout
+Login Manaf
+Logout
+Logout
 
 /////////////
 //// DOG ////
