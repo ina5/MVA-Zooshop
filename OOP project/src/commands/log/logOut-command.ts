@@ -9,9 +9,8 @@ import { Validator } from './../../common/validator';
 export class LogOut implements ICommand {
     private readonly _userSession: IUserSession;
     private readonly _factory: IModelsFactory;
-    constructor(@inject(TYPES.userSession) userSession: IUserSession,
-                @inject(TYPES.modelsFactory) factory: IModelsFactory) {
-        this._userSession = userSession;
+    constructor(
+        @inject(TYPES.modelsFactory) factory: IModelsFactory) {
         this._factory = factory;
     }
     public execute(parameters: string[]): string {
@@ -19,6 +18,6 @@ export class LogOut implements ICommand {
 
         this._userSession.currentUser = this._factory.registerUser('', Role.empty);
 
-        return Validator.getSuccessMessage('Log Out successfully');
+        return Validator.getLogSuccessfulMessage('Log Out successfully');
     }
 }

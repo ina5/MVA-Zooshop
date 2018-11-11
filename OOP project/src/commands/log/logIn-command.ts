@@ -15,11 +15,9 @@ export class LogIn implements ICommand {
 
     public constructor(
         @inject(TYPES.zooShopDatabase) zooShopDatabase: IZooShopDatabase,
-        @inject(TYPES.userSession) userSession: IUserSession,
         @inject(TYPES.modelsFactory) modelsFactory: IModelsFactory) {
 
         this._zooShopDatabase = zooShopDatabase;
-        this._userSession = userSession;
         this._factory = modelsFactory;
 
     }
@@ -46,7 +44,7 @@ export class LogIn implements ICommand {
             this._userSession.currentUser = this._zooShopDatabase.users[findUserIndex];
         }
 
-        return Validator.getSuccessMessage('Log In successfully!');
+        return Validator.getLogSuccessfulMessage('Log In successfully!');
 
     }
 }
