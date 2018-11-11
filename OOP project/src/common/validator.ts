@@ -18,7 +18,7 @@ export class Validator {
     }
     // error messages
     public static getInvalidCommandErrorMessage(commandName: string): string {
-        return `Х Invalid command name: ${commandName}`;
+        throw new Error  (`Х Invalid command name: ${commandName}`);
     }
     public static getAnimalNotFoundErrorMessage(id: number): string {
         return `Х Pet with id: ${id} was already sold! :(`;
@@ -27,10 +27,10 @@ export class Validator {
         return `Х Food ${name} was already sold! :(`;
     }
     public static getErrorMessage(message: string): string {
-        return `X Oops ${message}`;
+        throw new Error (`X Oops ${message}`);
     }
 
     public static getLogErrorMessage(message: string): string {
-        return `X Command not accepted: ${message}`;
+        throw new Error (`X Command not accepted: ${message}`);
     }
 }

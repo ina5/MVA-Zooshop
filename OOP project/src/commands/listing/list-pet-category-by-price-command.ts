@@ -22,7 +22,7 @@ export class ShowPet implements ICommand {
             return Validator.getErrorMessage('we haven\'t this kind of pet.');
         } else if (criteria === undefined && animalPrice === undefined) {
             // tslint:disable-next-line:max-line-length
-            return `\n>> List only ${animal}\n#####################\n${petArray.map((item: IPet) => item.print()).join('\n\n')}\n#####################\n`;
+            return `\n>> List only ${animal} \n${petArray.map((item: IPet) => item.print()).join('\n\n')}\n`;
         } else {
 
             return this.searchAnimalByPriceCriteria(petArray, criteria, +animalPrice);
