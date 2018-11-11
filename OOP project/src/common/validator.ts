@@ -21,10 +21,10 @@ export class Validator {
         throw new Error  (`Х Invalid command name: ${commandName}`);
     }
     public static getAnimalNotFoundErrorMessage(id: number): string {
-        return `Х Pet with id: ${id} was already sold! :(`;
+        return `Х Pet with id: ${id} was not found.`;
     }
     public static getFoodNotFoundErrorMessage(name: string): string {
-        return `Х Food ${name} was already sold! :(`;
+        return `Х Food ${name} was not found.`;
     }
     public static getErrorMessage(message: string): string {
         throw new Error (`X Oops ${message}`);
