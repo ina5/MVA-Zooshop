@@ -65,6 +65,7 @@ ListProducts
 Logout
 Login Minka
 BuyFood Aqua 
+BuyPet dog 1
 //BuyFood JoroMishkara 
 //ListProducts
 
@@ -75,9 +76,10 @@ BuyFood Aqua
 //ShowPet fish to 10
 //ShowPet dog over 5000
 //Show dog equal 600
+ShowShoppingCart
 
 Checkout
 
-Logout
-Login Owner
-ShowPet dog equal 7000
+//Logout
+//Login Owner
+//ShowPet dog equal 7000
