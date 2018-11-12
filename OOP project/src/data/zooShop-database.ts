@@ -2,6 +2,7 @@ import { injectable } from 'inversify';
 import { IZooShopDatabase } from '../contratcs/data-contract/zooShop-database';
 import { IPet } from '../contratcs/pets-contracts';
 import { IProduct } from '../contratcs/products-contract/products';
+import { IItem } from './../contratcs/item-contract/item';
 import { IUser } from './../contratcs/user-contract/user';
 
 @injectable()
@@ -10,7 +11,7 @@ export class ZooShopDatabase implements IZooShopDatabase {
     private readonly _pets: Map<string, IPet[]>;
 
     private readonly _products: IProduct[];
-    private readonly _shoppingCart: (IPet | IProduct)[];
+    private readonly _shoppingCart: IItem[];
 
     private readonly _users: IUser[];
     private _currentUser: IUser;
@@ -30,7 +31,7 @@ export class ZooShopDatabase implements IZooShopDatabase {
         return this._products;
     }
 
-    public get shoppingCart(): (IPet | IProduct)[] {
+    public get shoppingCart(): IItem[] {
         return this._shoppingCart;
     }
 
