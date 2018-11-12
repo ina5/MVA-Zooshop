@@ -14,23 +14,23 @@ export class Validator {
         return `- Zooshop sell food ${name}`;
     }
     public static getLogSuccessfulMessage(message: string): string {
-        return `+ Command is accepted: ${message}`;
+        return `✔ Command is accepted: ${message}`;
     }
     // error messages
     public static getInvalidCommandErrorMessage(commandName: string): string {
-        throw new Error  (`Х Invalid command name: ${commandName}`);
+        throw new Error  (`✘ Invalid command name: ${commandName}`);
     }
     public static getAnimalNotFoundErrorMessage(id: number): string {
-        return `Х Pet with id: ${id} was not found.`;
+        return `✘ Pet with id: ${id} was not found.`;
     }
     public static getFoodNotFoundErrorMessage(name: string): string {
-        return `Х Food ${name} was not found.`;
+        return `✘ Food ${name} was not found.`;
     }
     public static getErrorMessage(message: string): string {
-        throw new Error (`X Oops ${message}`);
+        throw new Error (`✘ Oops ${message}`);
     }
 
     public static getLogErrorMessage(message: string): string {
-        throw new Error (`X Command not accepted: ${message}`);
+        throw new Error (`✘ Command not accepted: ${message}`);
     }
 }
