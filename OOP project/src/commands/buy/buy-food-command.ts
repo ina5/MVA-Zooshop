@@ -1,12 +1,8 @@
 import { inject, injectable } from 'inversify';
-
-import { ICommand, IPet, IProduct } from '../../contratcs';
-
-import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
-
 import { TYPES } from '../../common';
-
 import { Validator } from '../../common/validator';
+import { ICommand, IProduct } from '../../contratcs';
+import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { ClientCommand } from '../abstract/client-command';
 
 @injectable()
