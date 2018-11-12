@@ -20,6 +20,9 @@ export class BuyPet extends ClientCommand implements ICommand {
             return Validator.getAnimalNotFoundErrorMessage(+animalId);
         } else {
             const indexInPetArr: number = petArray.findIndex((el: IPet) => el.id === +animalId);
+            if (indexInPetArr === -1) {
+                Validator.getErrorMessage('this pet is already sold.');
+            }
             const soldPet: IPet = petArray[indexInPetArr];
             this._zooShopDatabase.shoppingCart.push(soldPet);
             petArray.splice(indexInPetArr, 1);

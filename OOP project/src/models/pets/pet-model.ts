@@ -5,7 +5,7 @@ import { IPrinter } from './../../contratcs/pets-contracts/pets/print';
 
 // tslint:disable-next-line:export-name
 export abstract class Animals implements IPet, IPrinter {
-    public static _LastId: number = 0;
+    private static _LastId: number = 0;
     private _id: number;
     private readonly _price: number;
     private readonly _foodType: FoodType;

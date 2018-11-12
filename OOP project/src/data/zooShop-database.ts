@@ -11,7 +11,7 @@ export class ZooShopDatabase implements IZooShopDatabase {
     private readonly _pets: Map<string, IPet[]>;
 
     private readonly _products: IProduct[];
-    private readonly _shoppingCart: IItem[];
+    private  _shoppingCart: IItem[];
 
     private readonly _users: IUser[];
     private _currentUser: IUser;
@@ -35,6 +35,10 @@ export class ZooShopDatabase implements IZooShopDatabase {
         return this._shoppingCart;
     }
 
+    public set shoppingCart(items: IItem[]) {
+        this._shoppingCart = items ;
+    }
+
     public get users(): IUser[] {
         return this._users;
     }
@@ -43,8 +47,8 @@ export class ZooShopDatabase implements IZooShopDatabase {
         return this._currentUser;
     }
 
-    public set currentUser(v: IUser) {
-        this._currentUser = v;
+    public set currentUser(newUser: IUser) {
+        this._currentUser = newUser;
     }
     public addPet(key: string, pet: IPet): void {
         if (!this._pets.has(key)) {

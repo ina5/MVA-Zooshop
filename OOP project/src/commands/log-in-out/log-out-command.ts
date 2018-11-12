@@ -16,13 +16,13 @@ export class Logout implements ICommand {
     ) {
         this._data = data;
         this._factory = factory;
-
     }
     public execute(parameters: string[]): string {
         if (this._data.currentUser.role === Role.empty) {
             return Validator.getLogErrorMessage('No user in the current session!');
         }
         this._data.currentUser = this._factory.registerUser('', Role.empty);
+        this._data.shoppingCart = [];
 
         return Validator.getLogSuccessfulMessage('Log out successfully!');
     }

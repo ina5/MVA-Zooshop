@@ -20,7 +20,7 @@ export class ListPets implements ICommand {
                 petFromMap.forEach((pet: IPet) => str.push(pet.print()));
             });
 
-            return `\n>> List available pets.\n${str.join('\n\n')}\n\n`;
+            return `\n<< List available pets. >>\n${str.join('\n\n')}\n\n`;
         }
     }
 }

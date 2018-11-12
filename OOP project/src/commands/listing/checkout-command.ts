@@ -11,6 +11,7 @@ export class Checkout extends ClientCommand implements ICommand {
         super(data);
     }
     public execute(parameters: string[]): string {
+        super.execute(parameters);
         let totalPrice: number = 0;
         this._zooShopDatabase.shoppingCart.forEach((item: IItem) => {
             totalPrice += item.price;
@@ -18,6 +19,6 @@ export class Checkout extends ClientCommand implements ICommand {
 
         return `\n*****CHECKOUT*****\n${this._zooShopDatabase.shoppingCart.length === 0
             ? Validator.getErrorMessage('Shopping cart is empty.')
-            : `Your bill is with`} Total Price: ${totalPrice.toFixed(2)}lv`;
+            : `Your bill is with`} Total Price: ${totalPrice.toFixed(2)}lv\n`;
     }
 }
