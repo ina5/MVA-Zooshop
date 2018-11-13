@@ -15,6 +15,27 @@
             "smartStep": true,
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
-        }
+        },
+        {
+            "name": "Jest Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js", // Change jest with jest-cli if is not running
+            "stopOnEntry": false,
+            "args": [
+                "--runInBand"
+            ],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "test"
+            },
+            "console": "integratedTerminal",
+            "sourceMaps": true
+        },
     ]
 }

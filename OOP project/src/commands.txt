@@ -43,15 +43,19 @@ ReceiveFish MiniShark 450 mice male matte-grey salt
 //////////////
 //// FOOD ////
 //////////////
-//ReceiveFood One Purina 8 2
-//ReceiveFood Whiskas Pauch 8 1
-//ReceiveFood Kaufland SoftGranny 8 2
+//ReceiveFood One Purina 8 250
+ReceiveFood Whiskas Pauch 8 100
+//ReceiveFood Kaufland SoftGranny 8 90
 //ReceiveFood JoroMishkara Mice 7 10
 ReceiveFood Aqua NemoFood 5 800
 
+BuyPet dog 1
+
+Logout
+
 ListPets
 
-//Login Manaf
+Login Manaf
 BuyPet dog 1
 BuyPet cat 2
 BuyPet parrot 3
@@ -61,8 +65,6 @@ BuyFood Aqua
 ShowShoppingCart
 Checkout
 Logout
-
-
 
 //////////////
 /// FILTER ///
