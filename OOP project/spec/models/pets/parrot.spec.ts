@@ -1,10 +1,12 @@
+import { Parrot, Sex } from '../../../src/models';
+
+import { FoodType } from '../../../src/models/enum/food-type';
+
 import { IBird } from '../../../src/contratcs';
-import { FoodType } from './../../../src/models/enum/food-type';
-import { Sex } from './../../../src/models/enum/sex';
-import { Parrot } from './../../../src/models/pets/parrot-model';
+
 describe('Fish class', () => {
     describe('constructor should', () => {
-        it('throw when the breed length is less than 1', () => {
+        it('throw when the breed length is less than 3', () => {
             // Arrange, Act & Assert
             expect(() => new Parrot('', 100, FoodType.seeds, Sex.male, true, false)).toThrowError();
           });

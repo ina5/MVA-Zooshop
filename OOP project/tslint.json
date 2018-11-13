@@ -18,7 +18,7 @@
         "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
         "arrow-parens": true,
         "adjacent-overload-signatures": true,
-        "arrow-return-shorthand": [true, "multiline"],
+        "arrow-return-shorthand": false,
         "comment-format": [true, "check-space", "check-uppercase"],
         "indent": [true, "spaces"],
         "no-consecutive-blank-lines": true

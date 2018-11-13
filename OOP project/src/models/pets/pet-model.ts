@@ -13,7 +13,7 @@ export abstract class Animals implements IPet, IPrinter {
     private readonly _breed: string;
 
     constructor(breed: string, price: number, foodType: FoodType, sex: Sex) {
-        if (breed.length < 1) {
+        if (breed.length < 3 || breed.length > 15) {
             throw new Error(`Breed length cannot be less than 1 symbol.`);
         }
         if (price < 1 || price > 10000) {
