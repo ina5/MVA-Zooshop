@@ -16,7 +16,7 @@ export abstract class Pet implements IPet {
             throw new Error(`Breed length cannot be less than 1 symbol.`);
         }
         if (price < 1 || price > 10000) {
-            throw new Error(`Price cannot be less than 1лв and over 10 000лв.`);
+            throw new Error(`Price cannot be less than 1лв and over 10 000lv.`);
         }
         Pet._LastId += 1;
         this._id = Pet._LastId;
@@ -43,9 +43,12 @@ export abstract class Pet implements IPet {
     public get breed(): string {
         return this._breed;
     }
+
     public info(): string {
         // tslint:disable-next-line:max-line-length
         return `ID: ${this.id}\nBreed: ${this.breed}\nPrice: ${this.price}lv\nFood: ${this.foodType}\nGender: ${this.sex}\n`;
     }
-
+    protected clear(): void {
+        this._id = 0;
+    }
 }

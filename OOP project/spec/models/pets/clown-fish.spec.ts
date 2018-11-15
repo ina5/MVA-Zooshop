@@ -28,15 +28,24 @@ describe('Fish class', () => {
 
   });
 
-  describe('print should', () => {
+  describe('pet info should', () => {
     it('return correct string', () => {
       // Arrange
-      const fish: IFish = new ClownFish('Maroon', 100, FoodType.granules, Sex.female, 'maroon', WaterType.salt);
+      class FakeFish extends ClownFish {
+        constructor(breed: string, price: number, food: FoodType, sex: Sex, skinColor: string, water: WaterType) {
+          super(breed, price, food, sex, skinColor, water);
+          super.clear();
+          super.info();
+        }
+      }
+      const fish: IFish = new FakeFish('Maroon', 100, FoodType.granules, Sex.female, 'maroon', WaterType.salt);
+
       // Act
       const fishInfo: string = fish.info();
+
       // Assert
       // tslint:disable-next-line:max-line-length
-      expect(fishInfo).toBe(`ID: 2\nBreed: Maroon\nPrice: 100lv\nFood: granules\nGender: female\nSkin color: maroon\nAquatic environment: salt`);
+      expect(fishInfo).toBe(`ID: 0\nBreed: Maroon\nPrice: 100lv\nFood: granules\nGender: female\nSkin color: maroon\nAquatic environment: salt`);
     });
   });
 });
