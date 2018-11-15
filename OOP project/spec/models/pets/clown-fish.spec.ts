@@ -33,7 +33,7 @@ describe('Fish class', () => {
       // Arrange
       const fish: IFish = new ClownFish('Maroon', 100, FoodType.granules, Sex.female, 'maroon', WaterType.salt);
       // Act
-      const fishInfo: string = fish.print();
+      const fishInfo: string = fish.info();
       // Assert
       // tslint:disable-next-line:max-line-length
       expect(fishInfo).toBe(`ID: 2\nBreed: Maroon\nPrice: 100lv\nFood: granules\nGender: female\nSkin color: maroon\nAquatic environment: salt`);

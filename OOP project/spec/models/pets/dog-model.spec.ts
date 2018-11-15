@@ -37,7 +37,7 @@ describe('Dog class', () => {
             // Arrange
             const dog: IMammal = new Dog('Rottweiler', 250, FoodType.granules, Sex.male, FurType.long, DifficultyDegree.easy, true);
             // Act
-            const dogInfo: string = dog.print();
+            const dogInfo: string = dog.info();
             // Assert
             console.log(dog.id);
             // tslint:disable-next-line:max-line-length

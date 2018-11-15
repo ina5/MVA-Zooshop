@@ -32,7 +32,7 @@ describe('Fish class', () => {
           // Arrange
           const parrot: IBird = new Parrot('Macaw', 100, FoodType.seeds, Sex.male, true, false);
           // Act
-          const parrotInfo: string = parrot.print();
+          const parrotInfo: string = parrot.info();
           // Assert
 
           expect(parrotInfo).toBe(`ID: 2\nBreed: Macaw\nPrice: 100lv\nFood: seeds\nGender: male\nCan talk: yes\nCan sing: no`);
