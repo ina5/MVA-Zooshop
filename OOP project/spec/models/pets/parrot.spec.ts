@@ -27,7 +27,7 @@ describe('Fish class', () => {
     });
   });
 
-  describe('print should', () => {
+  describe('pet info should', () => {
     it('return correct string', () => {
       // Arrange
       class FakeParrot extends Parrot {
