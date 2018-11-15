@@ -12,7 +12,7 @@ export class ListProducts implements ICommand {
     public execute(parameters: string[]): string {
         return `\n>> List available products.\n${this._zooshopDatabase.products.length === 0
             ? Validator.getErrorMessage('there is no available foods at the moment...sorry.')
-            : this._zooshopDatabase.products.map((product: IProduct) => product.print()).join('\n\n')
+            : this._zooshopDatabase.products.map((product: IProduct) => product.info()).join('\n\n')
             }\n\n`;
     }
 }

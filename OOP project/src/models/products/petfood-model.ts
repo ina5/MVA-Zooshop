@@ -38,7 +38,7 @@ export class PetFood implements IProduct {
     public get weight(): number {
         return this._weight;
     }
-    public print(): string {
+    public info(): string {
         return `${this.name} ${this.brand}\nPrice: ${this.price}lv\nWeight: ${this.weight}g`;
     }
 }

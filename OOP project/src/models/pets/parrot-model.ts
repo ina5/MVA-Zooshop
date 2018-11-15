@@ -1,9 +1,9 @@
 import { IBird } from '../../contratcs/pets-contracts';
 import { FoodType } from '../enum/food-type';
 import { Sex } from '../enum/sex';
-import { Animals } from './pet-model';
+import { Pet } from './pet-model';
 
-export class Parrot extends Animals implements IBird {
+export class Parrot extends Pet implements IBird {
     private readonly _sing: boolean;
     private readonly _canTalk: boolean;
 
@@ -18,10 +18,10 @@ export class Parrot extends Animals implements IBird {
     public get sing(): boolean {
         return this._sing;
     }
-    protected additionalInfo(): string {
+    public info(): string {
         const canTalkToString: string = this._canTalk === true ? 'yes' : 'no';
         const canSingToString: string = this._sing === true ? 'yes' : 'no';
 
-        return `Can talk: ${canTalkToString}\nCan sing: ${canSingToString}`;
+        return `${super.info()}Can talk: ${canTalkToString}\nCan sing: ${canSingToString}`;
     }
 }

@@ -1,10 +1,9 @@
 import { IPet } from '../../contratcs/pets-contracts';
 import { FoodType } from '../enum/food-type';
 import { Sex } from '../enum/sex';
-import { IPrinter } from './../../contratcs/pets-contracts/pets/print';
 
 // tslint:disable-next-line:export-name
-export abstract class Animals implements IPet, IPrinter {
+export abstract class Pet implements IPet {
     private static _LastId: number = 0;
     private _id: number;
     private readonly _price: number;
@@ -19,8 +18,8 @@ export abstract class Animals implements IPet, IPrinter {
         if (price < 1 || price > 10000) {
             throw new Error(`Price cannot be less than 1лв and over 10 000лв.`);
         }
-        Animals._LastId += 1;
-        this._id = Animals._LastId;
+        Pet._LastId += 1;
+        this._id = Pet._LastId;
         this._breed = breed;
         this._price = price;
         this._foodType = foodType;
@@ -44,9 +43,9 @@ export abstract class Animals implements IPet, IPrinter {
     public get breed(): string {
         return this._breed;
     }
-    public print(): string {
+    public info(): string {
         // tslint:disable-next-line:max-line-length
-        return `ID: ${this.id}\nBreed: ${this.breed}\nPrice: ${this.price}lv\nFood: ${this.foodType}\nGender: ${this.sex}\n${this.additionalInfo()}`;
+        return `ID: ${this.id}\nBreed: ${this.breed}\nPrice: ${this.price}lv\nFood: ${this.foodType}\nGender: ${this.sex}\n`;
     }
-    protected abstract additionalInfo(): string;
+
 }

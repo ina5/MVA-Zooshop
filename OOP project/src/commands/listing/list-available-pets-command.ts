@@ -17,7 +17,7 @@ export class ListPets implements ICommand {
         } else {
             const str: string[] = [];
             petMap.forEach((petFromMap: IPet[]) => {
-                petFromMap.forEach((pet: IPet) => str.push(pet.print()));
+                petFromMap.forEach((pet: IPet) => str.push(pet.info()));
             });
 
             return `\n<< List available pets. >>\n${str.join('\n\n')}\n`;

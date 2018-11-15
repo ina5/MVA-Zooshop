@@ -1,9 +1,9 @@
 import { IMammal } from '../../contratcs/pets-contracts';
 import { FoodType } from '../enum/food-type';
 import { DifficultyDegree, FurType, Sex } from '../enum/index';
-import { Animals } from './pet-model';
+import { Pet } from './pet-model';
 
-export class Dog extends Animals implements IMammal {
+export class Dog extends Pet implements IMammal {
     private readonly _social: boolean;
     private readonly _trainable: DifficultyDegree;
     private readonly _furType: FurType;
@@ -25,9 +25,9 @@ export class Dog extends Animals implements IMammal {
         return this._trainable;
     }
 
-    protected additionalInfo(): string {
+    public info(): string {
         const booleanToString: string = this._social === true ? 'yes' : 'no';
 
-        return `Fur type: ${this.furType}\nTrainable: ${this.trainable}\nIs it social: ${booleanToString}`;
+        return `${super.info()}Fur type: ${this.furType}\nTrainable: ${this.trainable}\nIs it social: ${booleanToString}`;
     }
 }

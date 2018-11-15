@@ -1,9 +1,9 @@
 import { IReptile } from '../../contratcs/pets-contracts';
 import { FoodType } from '../enum/food-type';
 import { Sex } from '../enum/sex';
-import { Animals } from './pet-model';
+import { Pet } from './pet-model';
 
-export class Snake extends Animals implements IReptile {
+export class Snake extends Pet implements IReptile {
     private readonly _skinColor: string;
     private readonly _isVenomous: boolean;
 
@@ -22,7 +22,8 @@ export class Snake extends Animals implements IReptile {
     public get skinColor(): string {
         return this._skinColor;
     }
-    protected additionalInfo(): string {
-        return `Skin color: ${this.skinColor}\nVenomous: ${this.isVenomous}`;
+    public info(): string {
+
+        return `${super.info()}Skin color: ${this.skinColor}\nVenomous: ${this.isVenomous}`;
     }
 }

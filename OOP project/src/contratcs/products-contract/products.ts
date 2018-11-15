@@ -1,8 +1,8 @@
-import { IPrinter } from './../pets-contracts/pets/print';
-export interface IProduct extends IPrinter {
+export interface IProduct {
     // Think about product type, if its suitable for dog cat
     name: string;
     brand: string;
     price: number;
     weight: number;
+    info(): string;
 }
