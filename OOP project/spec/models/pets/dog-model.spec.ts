@@ -32,15 +32,25 @@ describe('Dog class', () => {
             expect(() => new Dog('Mops', 5000, FoodType.canned, Sex.male, FurType.short, DifficultyDegree.hard, false)).not.toThrowError();
         });
     });
-    describe('print should', () => {
+    describe('pet info should', () => {
         it('return correct string', () => {
             // Arrange
-            const dog: IMammal = new Dog('Rottweiler', 250, FoodType.granules, Sex.male, FurType.long, DifficultyDegree.easy, true);
+            class FakeDog extends Dog {
+                // tslint:disable-next-line:max-line-length
+                constructor(breed: string, price: number, food: FoodType, sex: Sex, furType: FurType, trainable: DifficultyDegree, social: boolean) {
+                    super(breed, price, food, sex, furType, trainable, social);
+                    super.clear();
+                    super.info();
+                }
+            }
+            const dog: IMammal = new FakeDog('Rottweiler', 250, FoodType.granules, Sex.male, FurType.long, DifficultyDegree.easy, true);
+
             // Act
             const dogInfo: string = dog.info();
+
             // Assert
             // tslint:disable-next-line:max-line-length
-            expect(dogInfo).toBe(`ID: ${dog.id}\nBreed: Rottweiler\nPrice: 250lv\nFood: granules\nGender: male\nFur type: long\nTrainable: easy\nIs it social: yes`);
+            expect(dogInfo).toBe(`ID: 0\nBreed: Rottweiler\nPrice: 250lv\nFood: granules\nGender: male\nFur type: long\nTrainable: easy\nIs it social: yes`);
         });
     });
 });

@@ -27,15 +27,24 @@ describe('Fish class', () => {
         });
     });
 
-    describe('print should', () => {
+    describe('pet info should', () => {
         it('return correct string', () => {
             // Arrange
-            const parrot: IBird = new Parrot('Macaw', 100, FoodType.seeds, Sex.male, true, false);
+            class FakeParrot extends Parrot {
+                constructor(breed: string, price: number, food: FoodType, sex: Sex, canTalk: boolean, canSing: boolean) {
+                    super(breed, price, food, sex, canTalk, canSing);
+                    super.clear();
+                    super.info();
+                }
+            }
+
+            const parrot: IBird = new FakeParrot('Macaw', 100, FoodType.seeds, Sex.male, true, false);
+
             // Act
             const parrotInfo: string = parrot.info();
-            // Assert
 
-            expect(parrotInfo).toBe(`ID: ${parrot.id}\nBreed: Macaw\nPrice: 100lv\nFood: seeds\nGender: male\nCan talk: yes\nCan sing: no`);
+            // Assert
+            expect(parrotInfo).toBe(`ID: 0\nBreed: Macaw\nPrice: 100lv\nFood: seeds\nGender: male\nCan talk: yes\nCan sing: no`);
         });
     });
 });

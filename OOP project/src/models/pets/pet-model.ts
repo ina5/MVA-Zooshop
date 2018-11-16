@@ -57,5 +57,7 @@ export abstract class Pet implements IPet {
         // tslint:disable-next-line:max-line-length
         return `ID: ${this.id}\nBreed: ${this.breed}\nPrice: ${this.price}lv\nFood: ${this.foodType}\nGender: ${this.sex}\n`;
     }
-
+    protected clear(): void {
+        this._id = 0;
+    }
 }
