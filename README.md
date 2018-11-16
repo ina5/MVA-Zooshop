@@ -10,8 +10,7 @@ Our team leader is ...null.
 Vanina Panova, Andrey Marev, Martin Bechev
 
 ## Way of working
-![alt text][logo]
-[logo]: .//img/2018-11-16 (2).png "Commands and Roles"
+![]('./img/2018-11-16 (2).png)
 
 ## Trello board.
 **[Trello Board](https://trello.com/b/gYdtEhIt/mva-zooshop)**
