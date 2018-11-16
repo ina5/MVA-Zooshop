@@ -39,9 +39,8 @@ describe('Dog class', () => {
             // Act
             const dogInfo: string = dog.info();
             // Assert
-            console.log(dog.id);
             // tslint:disable-next-line:max-line-length
-            expect(dogInfo).toBe(`ID: 2\nBreed: Rottweiler\nPrice: 250lv\nFood: granules\nGender: male\nFur type: long\nTrainable: easy\nIs it social: yes`);
+            expect(dogInfo).toBe(`ID: ${dog.id}\nBreed: Rottweiler\nPrice: 250lv\nFood: granules\nGender: male\nFur type: long\nTrainable: easy\nIs it social: yes`);
         });
     });
 });
