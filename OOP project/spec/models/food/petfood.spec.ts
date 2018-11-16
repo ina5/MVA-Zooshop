@@ -1,5 +1,5 @@
 import { IProduct } from '../../../src/contratcs';
-import { PetFood } from './../../../src/models/products/petfood-model';
+import { PetFood } from '../../../src/models/products/petfood-model';
 
 describe('Pet Food', () => {
     describe('constructor should', () => {

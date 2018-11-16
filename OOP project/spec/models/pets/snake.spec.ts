@@ -13,13 +13,13 @@ describe('Snake', () => {
         it('throw when invalid breed size is passed', () => {
             // Arrange Act Assert
             expect(() => new Snake('An', 2500, FoodType.mice, Sex.female, 'green', true))
-                .toThrow('Breed length cannot be less than 1 symbol.');
+                .toThrow('Breed length cannot be less than 1 symbol and more than 15 symbols.');
         });
 
         it('throw when invalid price is passed', () => {
             // Arrange Act Assert
             expect(() => new Snake('Anakonda', 0, FoodType.mice, Sex.female, 'green', true))
-                .toThrow('Price cannot be less than 1лв and over 10 000lv.');
+                .toThrow('Price cannot be less than 1lv and over 10 000lv.');
         });
 
         it('not throw error when valid values are passed', () => {
