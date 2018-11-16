@@ -11,10 +11,8 @@ Vanina Panova, Andrey Marev, Martin Bechev
 
 ## Way of working
 
-![alt text](https://ibb.co/iB2Y4f)
+![Semantic description of image](img/2018-11-16.png "Command and Roles")
 
 ## Trello board.
 **[Trello Board](https://trello.com/b/gYdtEhIt/mva-zooshop)**
-
-
 
