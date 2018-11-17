@@ -12,15 +12,15 @@ export class Engine implements IEngine {
   private readonly _dataSeeder: IDataSeeder;
 
   public constructor(
-    @inject(TYPES.reader) _reader: IReader,
-    @inject(TYPES.writer) _writer: IWriter,
-    @inject(TYPES.commandProcessor) _commandProcessor: ICommandProcessor,
-    @inject(TYPES.dataSeeder) _dataSeeder: IDataSeeder
+    @inject(TYPES.reader) reader: IReader,
+    @inject(TYPES.writer) writer: IWriter,
+    @inject(TYPES.commandProcessor) commandProcessor: ICommandProcessor,
+    @inject(TYPES.dataSeeder) dataSeeder: IDataSeeder
   ) {
-    this._reader = _reader;
-    this._writer = _writer;
-    this._commandProcessor = _commandProcessor;
-    this._dataSeeder = _dataSeeder;
+    this._reader = reader;
+    this._writer = writer;
+    this._commandProcessor = commandProcessor;
+    this._dataSeeder = dataSeeder;
   }
 
   public async start(): Promise<void> {

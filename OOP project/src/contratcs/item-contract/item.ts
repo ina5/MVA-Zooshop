@@ -1,5 +1,4 @@
-import { IPrinter } from '../pets-contracts';
-
-export interface IItem extends IPrinter {
+export interface IItem {
     price: number;
+    info(): string;
 }

@@ -1,3 +1,5 @@
+// tslint:disable-next-line
+import 'reflect-metadata';
 import { IPet } from '../../../src/contratcs';
 import { FoodType } from './../../../src/models/enum/food-type';
 import { Sex } from './../../../src/models/enum/sex';

@@ -9,6 +9,10 @@ export abstract class ClientCommand implements ICommand {
     constructor(@inject(TYPES.zooShopDatabase) zooShopDatabase: IZooShopDatabase) {
         this._zooShopDatabase = zooShopDatabase;
     }
+    protected get zooShop(): IZooShopDatabase {
+        return this._zooShopDatabase;
+    }
+
     public execute(parameters: string[]): string {
         if (this._zooShopDatabase.currentUser.role === Role.employee) {
             Validator.getErrorMessage(`Invalid command for current User's Role`);

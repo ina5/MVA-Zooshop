@@ -3,6 +3,7 @@ export const TYPES: IType = {
     reader: Symbol.for('reader'),
     writer: Symbol.for('writer'),
     commandFactory: Symbol.for('commandFactory'),
+    containerCommandFactory: Symbol.for('containerCommandFactory'),
     zooShopFactory: Symbol.for('zooShopFactory'),
     zooShopDatabase: Symbol.for('zooShopDatabase'),
     modelsFactory: Symbol.for('modelsFactory'),
@@ -10,5 +11,21 @@ export const TYPES: IType = {
     dataFormatter: Symbol.for('dataFormatter'),
     commandProcessor: Symbol.for('commandProcessor'),
     commandParser: Symbol.for('commandParser'),
-    dataSeeder: Symbol.for('dataSeeder')
+    dataSeeder: Symbol.for('dataSeeder'),
+    receivecat: Symbol.for('receivecat'),
+    receivedog: Symbol.for('receivedog'),
+    receiveparrot: Symbol.for('receiveparrot'),
+    receivesnake: Symbol.for('receivesnake'),
+    receivefish: Symbol.for('receivefish'),
+    receivefood: Symbol.for('receivefood'),
+    login: Symbol.for('login'),
+    logout: Symbol.for('logout'),
+    listpets: Symbol.for('listpets'),
+    listproducts: Symbol.for('listproducts'),
+    showpet: Symbol.for('showpet'),
+    showshoppingcart: Symbol.for('showshoppingcart'),
+    checkout: Symbol.for('checkout'),
+    buyfood: Symbol.for('buyfood'),
+    buypet: Symbol.for('buypet')
+
 };

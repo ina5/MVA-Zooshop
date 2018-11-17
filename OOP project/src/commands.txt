@@ -14,7 +14,7 @@ ReceiveDog Chao-Chao 7000 granules male long hard true
 //ReceiveCat Persian 500 paste female long hard false
 //ReceiveCat Siamese 8500 canned male long challenging false
 //ReceiveCat Bengal 8000 granules female long hard false
-ReceiveCat Peterbald 3900 paste female short hard false
+ReceiveCat Peterbald 3900 paste female short hard true
 
 ////////////////
 //// PARROT ////
@@ -55,16 +55,16 @@ Logout
 
 ListPets
 
-Login Manaf
-BuyPet dog 1
-BuyPet cat 2
-BuyPet parrot 3
-BuyPet snake 4
-BuyPet fish 5
-BuyFood Aqua
-ShowShoppingCart
-Checkout
-Logout
+//Login Manaf
+//BuyPet dog 1
+//BuyPet cat 2
+//BuyPet parrot 3
+//BuyPet snake 4
+//BuyPet fish 5
+//BuyFood Aqua
+//ShowShoppingCart
+//Checkout
+//Logout
 
 //////////////
 /// FILTER ///

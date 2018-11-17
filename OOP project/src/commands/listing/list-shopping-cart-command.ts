@@ -14,6 +14,6 @@ export class ShowShoppingCart extends ClientCommand implements ICommand {
 
         return `\n*****Shopping Cart*****\n${this._zooShopDatabase.shoppingCart.length === 0 ?
             Validator.getErrorMessage('Shopping Cart is empty.')
-            : this._zooShopDatabase.shoppingCart.map((item: IItem) => item.print()).join('\n\n')}\n`;
+            : this._zooShopDatabase.shoppingCart.map((item: IItem) => item.info()).join('\n\n')}\n`;
     }
 }
