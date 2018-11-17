@@ -1,7 +1,8 @@
 // tslint:disable-next-line
 import 'reflect-metadata';
 import { IMammal } from '../../../src/contratcs';
-import { DifficultyDegree, FoodType, FurType, Sex } from '../../../src/models/enum';
+import { DifficultyDegree, FurType, Sex } from '../../../src/models/enum';
+import { FoodType } from '../../../src/models/enum/food-type';
 import { Cat } from '../../../src/models/pets/cat-model';
 
 describe('Cat', () => {
