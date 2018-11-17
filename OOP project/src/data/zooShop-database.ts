@@ -1,8 +1,8 @@
 import { injectable } from 'inversify';
 import { IZooShopDatabase } from '../contratcs/data-contract/zooShop-database';
-import { IPet } from '../contratcs/pets-contracts';
 import { IProduct } from '../contratcs/products-contract/products';
 import { IItem } from './../contratcs/item-contract/item';
+import { IPet } from './../contratcs/pets-contracts/pets/pet';
 import { IUser } from './../contratcs/user-contract/user';
 
 @injectable()
@@ -11,7 +11,7 @@ export class ZooShopDatabase implements IZooShopDatabase {
     private readonly _pets: Map<string, IPet[]>;
 
     private readonly _products: IProduct[];
-    private  _shoppingCart: IItem[];
+    private _shoppingCart: IItem[];
 
     private readonly _users: IUser[];
     private _currentUser: IUser;
@@ -36,7 +36,7 @@ export class ZooShopDatabase implements IZooShopDatabase {
     }
 
     public set shoppingCart(items: IItem[]) {
-        this._shoppingCart = items ;
+        this._shoppingCart = items;
     }
 
     public get users(): IUser[] {
@@ -50,14 +50,21 @@ export class ZooShopDatabase implements IZooShopDatabase {
     public set currentUser(newUser: IUser) {
         this._currentUser = newUser;
     }
-    public addPet(key: string, pet: IPet): void {
-        if (!this._pets.has(key)) {
+    public addPet(key: string, pet: IPet): string {
+        if (key === '') {
+            throw new Error('Key can not be empty string!');
+
+        } else if (key === undefined) {
+            throw new Error('UNDEFINED!');
+        } else if (!this._pets.has(key)) {
             this._pets.set(key, []);
             this.pushValues(key, pet);
 
         } else {
             this.pushValues(key, pet);
         }
+
+        return 'Success';
     }
     private pushValues(key: string, pet: IPet): void {
         const values: IPet[] | undefined = this.pets.get(key);

@@ -1,7 +1,7 @@
 // tslint:disable-next-line
 import 'reflect-metadata';
 import { IZooShopDatabase } from '../../../src/contratcs/data-contract/zooShop-database';
-import { ZooShopDatabase } from './../../../src/data/zooShop-database';
+import { ZooShopDatabase } from '../../../src/data/zooShop-database';
 import { ClientCommandMock } from './clientCommand';
 jest.mock('./../../../src/data/zooShop-database.ts');
 

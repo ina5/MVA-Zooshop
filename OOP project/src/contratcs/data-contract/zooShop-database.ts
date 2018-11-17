@@ -8,5 +8,5 @@ export interface IZooShopDatabase {
     users: IUser[];
     currentUser: IUser;
 
-    addPet(key: string, pet: IPet): void;
+    addPet(key: string, pet: IPet): string;
 }
