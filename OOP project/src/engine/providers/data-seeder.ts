@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { TYPES } from '../../common';
+import { TYPES } from '../../common/types';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
 import { IModelsFactory } from '../../contratcs/engine-contracts/factories/models-factory';
 import { IDataSeeder } from './../../contratcs/engine-contracts/providers/data-seeder';

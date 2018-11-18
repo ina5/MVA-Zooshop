@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import * as commands from '../../commands';
-import { TYPES } from '../../common/TYPES';
+import { TYPES } from '../../common/types';
 import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
@@ -13,13 +13,9 @@ export class CommandFactory implements ICommandFactory {
   private readonly _modelsFactory: IModelsFactory;
   private readonly _commands: Map<string, new (data: IZooShopDatabase, factory: IModelsFactory) => ICommand>;
 
-  public constructor(
-    @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
-    @inject(TYPES.modelsFactory) modelsFactory: IModelsFactory
-  ) {
+  public constructor(@inject(TYPES.zooShopDatabase) data: IZooShopDatabase, @inject(TYPES.modelsFactory) modelsFactory: IModelsFactory) {
     this._data = data;
     this._modelsFactory = modelsFactory;
-
     this._commands = Object
       .keys(commands)
       .reduce((allCommands: Map<string, new () => ICommand>, commandName: string): Map<string, new () => ICommand> => {
@@ -36,7 +32,7 @@ export class CommandFactory implements ICommandFactory {
     const lowerCaseCommandName: string = commandName.toLowerCase();
 
     const command: (new (data: IZooShopDatabase, factory: IModelsFactory)
-    => ICommand) | undefined = this._commands.get(lowerCaseCommandName);
+      => ICommand) | undefined = this._commands.get(lowerCaseCommandName);
     if (!command) {
       throw new Error(Validator.getInvalidCommandErrorMessage(commandName));
     }

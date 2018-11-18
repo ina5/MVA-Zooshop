@@ -55,7 +55,7 @@ export class ZooShopDatabase implements IZooShopDatabase {
             throw new Error('Key can not be empty string!');
 
         } else if (key === undefined) {
-            throw new Error('UNDEFINED!');
+            throw new Error();
         } else if (!this._pets.has(key)) {
             this._pets.set(key, []);
             this.pushValues(key, pet);

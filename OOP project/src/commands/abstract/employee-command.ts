@@ -1,10 +1,10 @@
-import { inject } from 'inversify';
-import { TYPES } from '../../common';
+import { inject, injectable } from 'inversify';
+import { TYPES } from '../../common/types';
 import { Validator } from '../../common/validator';
-import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
+import { ICommand } from '../../contratcs';
+import { IZooShopDatabase } from '../../contratcs/data-contract';
 import { Role } from '../../models';
-import { ICommand } from './../../contratcs/commands/command';
-
+@injectable()
 export abstract class EmployeeCommand implements ICommand {
     protected _zooShopDatabase: IZooShopDatabase;
     constructor(@inject(TYPES.zooShopDatabase) zooShopDatabase: IZooShopDatabase) {

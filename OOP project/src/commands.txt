@@ -1,4 +1,4 @@
-//Login Owner
+Login Owner
 
 /////////////
 //// DOG ////
@@ -14,7 +14,7 @@ ReceiveDog Chao-Chao 7000 granules male long hard true
 //ReceiveCat Persian 500 paste female long hard false
 //ReceiveCat Siamese 8500 canned male long challenging false
 //ReceiveCat Bengal 8000 granules female long hard false
-ReceiveCat Peterbald 3900 paste female short hard true
+//ReceiveCat Peterbald 3900 paste female short hard true
 
 ////////////////
 //// PARROT ////
@@ -22,7 +22,7 @@ ReceiveCat Peterbald 3900 paste female short hard true
 //ReceiveParrot Ara 8000 seeds male true true
 //ReceiveParrot Cockatoos 2500 seeds female true true
 //ReceiveParrot Kakapo 1500 seeds male false true
-ReceiveParrot Red-Lory 3000 seeds male false true
+//ReceiveParrot Red-Lory 3000 seeds male false true
 
 ///////////////
 //// SNAKE ////
@@ -30,7 +30,7 @@ ReceiveParrot Red-Lory 3000 seeds male false true
 //ReceiveSnake Viper 800 mice female grey true
 //ReceiveSnake Anakonda 1200 mice female brown true
 //ReceiveSnake Smok 200 mice female green true
-ReceiveSnake Cobra 120 mice male brown true
+//ReceiveSnake Cobra 120 mice male brown true
 
 //////////////
 //// FISH ////
@@ -38,22 +38,24 @@ ReceiveSnake Cobra 120 mice male brown true
 //ReceiveFish Nemo 5.50 seeds female orange/white fresh
 //ReceiveFish Piranoku 9.60 canned female matte-grey salt
 //ReceiveFish Piranoku 20 canned female matte-grey salt
-ReceiveFish MiniShark 450 mice male matte-grey salt
+//ReceiveFish MiniShark 450 mice male matte-grey salt
 
 //////////////
 //// FOOD ////
 //////////////
+//Login Owner
 //ReceiveFood One Purina 8 250
-ReceiveFood Whiskas Pauch 8 100
+//ReceiveFood Whiskas Pauch 8 100
 //ReceiveFood Kaufland SoftGranny 8 90
 //ReceiveFood JoroMishkara Mice 7 10
-ReceiveFood Aqua NemoFood 5 800
-
-BuyPet dog 1
+//ReceiveFood Aqua NemoFood 5 800
+//ReceiveFish MiniShark 450 mice male matte-grey salt
+//BuyPet dog 1
 
 Logout
 
 ListPets
+ListProducts
 
 //Login Manaf
 //BuyPet dog 1

@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
-import { TYPES } from '../../common';
-import { ICommandFactory, ICommandParser, ICommandProcessor} from '../../contratcs';
+import { TYPES } from '../../common/types';
+import { ICommandParser, ICommandProcessor } from '../../contratcs';
 import { ICommand } from './../../contratcs/commands/command';
 @injectable()
 

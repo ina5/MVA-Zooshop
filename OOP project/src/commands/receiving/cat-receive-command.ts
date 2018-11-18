@@ -1,9 +1,14 @@
 import { inject, injectable } from 'inversify';
-import { TYPES, Validator } from '../../common';
-import { ICommand, IModelsFactory, IPet } from '../../contratcs';
+import { TYPES } from '../../common/types';
+import { Validator } from '../../common/validator';
+import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
-import { DifficultyDegree, FurType, Sex } from '../../models';
+import { IModelsFactory } from '../../contratcs/engine-contracts/factories/models-factory';
+import { IPet } from '../../contratcs/pets-contracts/pets/pet';
 import { FoodType } from '../../models/enum/food-type';
+import { FurType } from '../../models/enum/fur';
+import { Sex } from '../../models/enum/sex';
+import { DifficultyDegree } from '../../models/enum/train-difficulty';
 import { EmployeeCommand } from '../abstract/employee-command';
 
 @injectable()

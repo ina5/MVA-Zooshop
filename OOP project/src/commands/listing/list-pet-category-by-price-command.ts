@@ -3,18 +3,20 @@ import { TYPES } from '../../common';
 import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
+import { ClientCommand } from '../abstract/client-command';
 import { IPet } from './../../contratcs/pets-contracts/pets/pet';
 
 @injectable()
-export class ShowPet implements ICommand {
+export class ShowPet extends ClientCommand implements ICommand {
     private readonly _data: IZooShopDatabase;
 
     public constructor(
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase
     ) {
-        this._data = data;
+        super(data);
     }
     public execute(parameters: string[]): string {
+        super.execute(parameters);
         const [animal, criteria, animalPrice] = parameters;
         const petArray: IPet[] | undefined = this._data.pets.get(animal);
 

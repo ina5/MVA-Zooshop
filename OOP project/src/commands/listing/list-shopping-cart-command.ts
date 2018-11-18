@@ -11,6 +11,7 @@ export class ShowShoppingCart extends ClientCommand implements ICommand {
         super(data);
     }
     public execute(parameters: string[]): string {
+        super.execute(parameters);
 
         return `\n*****Shopping Cart*****\n${this._zooShopDatabase.shoppingCart.length === 0 ?
             Validator.getErrorMessage('Shopping Cart is empty.')
