@@ -19,6 +19,11 @@ export class Login implements ICommand {
         this._factory = factory;
 
     }
+    // For Test
+    public get zooShop(): IZooShopDatabase {
+        return this._data;
+    }
+
     public execute(parameters: string[]): string {
         const [name] = parameters;
         if (this._data.currentUser.name === name
