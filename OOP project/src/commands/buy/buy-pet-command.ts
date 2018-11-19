@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { TYPES } from '../../common';
+import { TYPES } from '../../common/types';
 import { Validator } from '../../common/validator';
 import { ICommand } from '../../contratcs/commands/command';
 import { IZooShopDatabase } from '../../contratcs/data-contract/zooShop-database';
@@ -13,8 +13,8 @@ export class BuyPet extends ClientCommand implements ICommand {
         super(data);
     }
     public execute(parameters: string[]): string {
-        const [animal, animalId] = parameters;
         super.execute(parameters);
+        const [animal, animalId] = parameters;
         const petArray: IPet[] | undefined = this._zooShopDatabase.pets.get(animal);
         if (petArray === undefined) {
             return Validator.getAnimalNotFoundErrorMessage(+animalId);

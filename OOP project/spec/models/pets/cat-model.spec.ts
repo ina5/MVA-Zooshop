@@ -29,5 +29,10 @@ describe('Cat', () => {
             expect(() => (cat.breed = 'new-breed')).toThrow();
             expect(() => (cat.price = 2)).toThrow();
         });
+        it('throw an error if price is higher than 10000', () => {
+            // Arrange, Act & Assert
+            expect(() => new Cat('Siamese', 10500, FoodType.canned, Sex.male, FurType.short, DifficultyDegree.hard, false))
+                .toThrowError();
+        });
     });
 });

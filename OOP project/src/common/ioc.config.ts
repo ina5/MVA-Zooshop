@@ -8,7 +8,7 @@ import { IZooShopDatabase } from '../contratcs/data-contract/zooShop-database';
 import { ZooShopDatabase } from '../data/zooShop-database';
 import { CommandProcessor } from '../engine/providers/command-processor';
 import { CommandParser } from '../engine/providers/command-parser';
-import { ReceiveCat, ReceiveDog, ReceiveFish, ReceiveParrot, ReceiveSnake, ReceiveFood, Login, Logout, ListPets, ListProducts, ShowPet, Checkout, BuyFood, BuyPet } from '../commands';
+import { ReceiveCat, ReceiveDog, ReceiveFish, ReceiveParrot, ReceiveSnake, ReceiveFood, Login, Logout, ListPets, ListProducts, ShowPet, Checkout, BuyFood, BuyPet, ShowShoppingCart } from '../commands';
 import { TYPES } from './types';
 
 const container: Container = new Container();
@@ -44,6 +44,7 @@ container.bind<ICommand>(TYPES.showpet).to(ShowPet);
 container.bind<ICommand>(TYPES.checkout).to(Checkout);
 container.bind<ICommand>(TYPES.buyfood).to(BuyFood);
 container.bind<ICommand>(TYPES.buypet).to(BuyPet);
+container.bind<ICommand>(TYPES.showshoppingcart).to(ShowShoppingCart);
 // container.bind<ICommandFactory>(TYPES.commandFactory).to(CommandFactory);
 
 container

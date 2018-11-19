@@ -10,7 +10,7 @@ export class ReceiveFood extends EmployeeCommand implements ICommand {
 
     constructor(
         @inject(TYPES.zooShopDatabase) data: IZooShopDatabase,
-        @inject(TYPES.productFactory) factory: IModelsFactory) {
+        @inject(TYPES.modelsFactory) factory: IModelsFactory) {
         super(data);
         this._factory = factory;
 

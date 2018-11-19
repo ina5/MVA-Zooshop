@@ -33,7 +33,7 @@ export abstract class Pet implements IPet {
 
     }
 
-    get id(): number {
+    public get id(): number {
         return this._id;
     }
 
@@ -57,6 +57,7 @@ export abstract class Pet implements IPet {
         // tslint:disable-next-line:max-line-length
         return `ID: ${this.id}\nBreed: ${this.breed}\nPrice: ${this.price}lv\nFood: ${this.foodType}\nGender: ${this.sex}\n`;
     }
+    // FOR TESTING
     protected clear(): void {
         this._id = 0;
     }

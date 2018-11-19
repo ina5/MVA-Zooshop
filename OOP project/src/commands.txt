@@ -5,7 +5,7 @@ Login Owner
 /////////////
 //ReceiveDog Rottweiler 600 granules male short challenging false .
 //ReceiveDog Labrador 150 granules male short easy true
-//ReceiveDog Mops 1300 granules female short hard false
+ReceiveDog Mops 1300 granules female short hard false
 ReceiveDog Chao-Chao 7000 granules male long hard true
 
 /////////////
@@ -48,8 +48,8 @@ ReceiveDog Chao-Chao 7000 granules male long hard true
 //ReceiveFood Whiskas Pauch 8 100
 //ReceiveFood Kaufland SoftGranny 8 90
 //ReceiveFood JoroMishkara Mice 7 10
-//ReceiveFood Aqua NemoFood 5 800
-//ReceiveFish MiniShark 450 mice male matte-grey salt
+ReceiveFood Aqua NemoFood 5 800
+ReceiveFish MiniShark 450 mice male matte-grey salt
 //BuyPet dog 1
 
 Logout
@@ -57,13 +57,11 @@ Logout
 ListPets
 ListProducts
 
-//Login Manaf
-//BuyPet dog 1
+
 //BuyPet cat 2
 //BuyPet parrot 3
 //BuyPet snake 4
 //BuyPet fish 5
-//BuyFood Aqua
 //ShowShoppingCart
 //Checkout
 //Logout
@@ -72,7 +70,14 @@ ListProducts
 /// FILTER ///
 //////////////
 
-//ShowPet fish to 10
-//ShowPet dog over 5000
-//Show dog equal 600
-//ShowShoppingCart
+ShowPet fish to 10
+ShowPet dog over 5000
+ShowPet dog equal 600
+ShowShoppingCart
+
+Login Petur
+BuyPet dog 1
+BuyFood Aqua
+ShowShoppingCart
+Checkout
+Logout
