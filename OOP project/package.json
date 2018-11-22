@@ -27,7 +27,8 @@
     "build": "npm run clean & tsc --project .",
     "build-w": "npm run clean & tsc --project . -w",
     "clean": "rimraf ./dist",
-    "test": "jest"
+    "test": "jest",
+    "lint": "tslint ."
   },
   "author": "Martin Veshev",
   "license": "MIT"
